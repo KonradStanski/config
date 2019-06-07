@@ -1,0 +1,25 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": -1,
+    "files.autoSave": "onFocusChange",
+    "editor.renderWhitespace": "all",
+    "editor.dragAndDrop": false,
+    "editor.glyphMargin": true,
+    "editor.highlightActiveIndentGuide": false,
+    "editor.hover.sticky": false,
+    "editor.matchBrackets": false,
+    "editor.mouseWheelZoom": true,
+    "editor.occurrencesHighlight": false,
+    "workbench.colorTheme": "Monokai",
+    "workbench.tips.enabled": false,
+    "workbench.editor.closeOnFileDelete": true,
+    "editor.renderLineHighlight": "none",
+    "editor.fontSize": 12,
+    "bracket-pair-colorizer-2.colors": [
+        "white"
+    ],
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+    "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+    "bracket-pair-colorizer-2.showBracketsInGutter": true
+}
