@@ -14,6 +14,7 @@ alias home='cd ~'
 alias root='cd /'
 alias cs='clear;ls'
 alias p='cat'
+alias ls='ls --color=auto'
 alias lsa='ls -a'
 alias lsl='ls -l'
 alias ..='cd ..'
@@ -80,6 +81,12 @@ gdone() {
     git commit -a -m "$1"
     git push
 }
+
+#remove directory
+rmdir(){
+	rm -r -f "$1"
+}
+
 
 # PATHS #########################################################
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
