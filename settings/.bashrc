@@ -3,9 +3,10 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+# GENERAL SETTINGS ###########################################
 # Uncomment if you want to use tmux by default
 # [[ $TERM != "screen" ]] && exec tmux
-
 
 # ALIASES ####################################################
 # Common aliases
@@ -74,7 +75,6 @@ rmdir(){
 	rm -r -f "$1"
 }
 
-
 # PATHS #########################################################
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -86,6 +86,8 @@ export ANDROID_STUDIO=$HOME/Documents/android-studio-ide-183.5452501-linux/andro
 export PATH=$PATH:$ANDROID_STUDIO/bin
 alias android-studio='studio.sh'
 
+# OTHER #########################################################
+# colour bash prompt:
 # BASH prompt https://misc.flogisoft.com/bash/tip_colors_and_formatting
 shopt -s checkwinsize
 green="\001$(tput setaf 34)\002"
@@ -101,5 +103,12 @@ PS1+="$exitunder$green]\$$reset "
 export PS1
 unset green blue bold reset
 
-
-# OTHER #########################################################
+# colour man pages:
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
