@@ -57,22 +57,9 @@ echo "${myip}"
 echo "---------------------------------------------------"
 }
 
-#copy and go to dir
-cpg (){
-  if [ -d "$2" ];then
-    cp $1 $2 && cd $2
-  else
-    cp $1 $2
-  fi
-}
-
-#move and go to dir
-mvg (){
-  if [ -d "$2" ];then
-    mv $1 $2 && cd $2
-  else
-    mv $1 $2
-  fi
+# get cheat sheet for a command
+cheat(){
+  curl cheat.sh/"$1"
 }
 
 # Do entire git workflow
