@@ -36,6 +36,7 @@ alias gcom='git commit -m'
 alias gadd='git add .'
 alias gpush='git push'
 alias glg='git log --graph --oneline --decorate --all'
+alias gdiff='git status -v'
 
 # Common Files to edit
 alias vimrc='vim ~/.vimrc'
