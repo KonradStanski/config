@@ -92,6 +92,7 @@ alias android-studio='studio.sh'
 # BASH prompt https://misc.flogisoft.com/bash/tip_colors_and_formatting
 shopt -s checkwinsize
 green="\001$(tput setaf 34)\002"
+yellow="\001$(tput setaf 172)\002"
 blue="\001$(tput setaf 25)\002"
 bold="\001$(tput bold)\002"
 underline="\001$(tput smul)\002"
@@ -100,9 +101,12 @@ reset="\001$(tput sgr0)\002"
 
 PS1="$bold$green[\u@\h:"
 PS1+="$underline$blue\w"
-PS1+="$exitunder$green]\$$reset "
+PS1+="$exitunder$green]$yellow\$(git_branch)$reset\$ "
 export PS1
 unset green blue bold reset
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
 # colour man pages:
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
