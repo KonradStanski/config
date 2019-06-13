@@ -76,18 +76,7 @@ rmdir(){
 	rm -r -f "$1"
 }
 
-# PATHS #########################################################
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
-export ANDROID_STUDIO=$HOME/Documents/android-studio-ide-183.5452501-linux/android-studio
-export PATH=$PATH:$ANDROID_STUDIO/bin
-alias android-studio='studio.sh'
-
-# OTHER #########################################################
 # colour bash prompt:
 # BASH prompt https://misc.flogisoft.com/bash/tip_colors_and_formatting
 shopt -s checkwinsize
@@ -117,3 +106,16 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+# PATHS #########################################################
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export ANDROID_STUDIO=$HOME/Documents/android-studio-ide-183.5452501-linux/android-studio
+export PATH=$PATH:$ANDROID_STUDIO/bin
+
+# OTHER #########################################################
+alias android-studio='studio.sh'
