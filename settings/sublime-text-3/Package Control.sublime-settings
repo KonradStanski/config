@@ -5,6 +5,8 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
+		"AutoFileName",
 		"BracketHighlighter",
 		"GitGutter",
 		"Markdown Code Blocks",
@@ -12,6 +14,6 @@
 		"Package Control",
 		"SideBarEnhancements",
 		"SublimeLinter",
-		"SublimeLinter-pycodestyle",
+		"SublimeLinter-pycodestyle"
 	]
 }

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # OPTIONAL PACKAGES#####################################################
+# Install overgrive
+
 
 # install arduino-ua/mk/corec
 sudo apt-get intall arduino arduino-core -y
@@ -22,13 +24,27 @@ sudo dpkg-reconfigure wireshark-common
 sudo usermod -a -G wireshark $USER
 
 
-# install jstock
+# Install Virtualbox
+sudo apt-get isntall virtualbox -y
+sudo apt install virtualbox-ext-pack
+sudo apt install virtualbox-qt
+
+# Install Android Studio
+wget https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-linux.tar.gz
+tar -xvzf android-studio-ide-183.5522156-linux.tar.gz
+sudo mv android-studio /opt/
+echo '' >> ~/.bashrc
+echo '# Android studio stuff' >> ~/.bashrc
+echo 'alias android-studio="/opt/android-studio/bin/studio.sh"' >> ~/.bashrc
+
+
+
+# Install jstock
 wget https://github.com/yccheok/jstock/releases/download/release_1-0-7-37/jstock-1.0.7.37-bin.zip
 sudo unzip jstock-1.0.7.37-bin.zip -d /opt/
 sudo chmod +x /opt/jstock/jstock.sh
 echo '' >> ~/.bashrc
-echo '#jstock path and alias' >> ~/.bashrc
-echo 'export PATH=$PATH:/opt/jstock' >> ~/.bashrc
+echo '# jstock path and alias' >> ~/.bashrc
 echo 'alias jstock="/opt/jstock/jstock.sh &"' >> ~/.bashrc
 
 

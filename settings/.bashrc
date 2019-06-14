@@ -14,10 +14,9 @@ alias q='exit'
 alias home='cd ~'
 alias root='cd /'
 alias cs='clear;ls'
-alias p='cat'
 alias ls='ls --color=auto'
-alias lsa='ls -a'
-alias lsl='ls -l'
+alias la='ls -a'
+alias ll='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -35,8 +34,7 @@ alias gstat='git status'
 alias gcom='git commit -m'
 alias gadd='git add .'
 alias gpush='git push'
-alias glg='git log --graph --oneline --decorate --all'
-alias gdiff='git status -v'
+alias glog='git log --graph --oneline --decorate --all'
 
 # Common Files to edit
 alias vimrc='vim ~/.vimrc'
@@ -61,11 +59,11 @@ echo "---------------------------------------------------"
 
 # get cheat sheet for a command
 cheat(){
-  curl cheat.sh/"$1"
+	curl cheat.sh/"$1"
 }
 
 # Do entire git workflow
-gdone() {
+gdone(){
     git add .
     git commit -a -m "$1"
     git push
@@ -76,13 +74,18 @@ rmdir(){
 	rm -r -f "$1"
 }
 
+#Get defference between current and remote repo
+gdiff(){
+	git add . > /dev/null
+	git status -v
+	sudo git reset > /dev/null
+}
 
-# colour bash prompt:
 # BASH prompt https://misc.flogisoft.com/bash/tip_colors_and_formatting
 shopt -s checkwinsize
 green="\001$(tput setaf 34)\002"
 yellow="\001$(tput setaf 172)\002"
-blue="\001$(tput setaf 25)\002"
+blue="\001$(tput setaf 33)\002"
 bold="\001$(tput bold)\002"
 underline="\001$(tput smul)\002"
 exitunder="\001$(tput rmul)\002"
@@ -118,4 +121,3 @@ export ANDROID_STUDIO=$HOME/Documents/android-studio-ide-183.5452501-linux/andro
 export PATH=$PATH:$ANDROID_STUDIO/bin
 
 # OTHER #########################################################
-alias android-studio='studio.sh'
