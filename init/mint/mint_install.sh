@@ -29,10 +29,8 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt install sublime-text -y
 # Setup custom sublime settings
-# cp sublime-text-3/ /home/konrad/.config/
-# Sublime packages:
-# package control, fileIcons, sublimeLinter, sublimeLinter-pycodestyle,
-# gitGutter, bracketHilighter, sideBarEnhancments
+cp ../../settings/sublime-text-3/Package\ Control.sublime-settings ~/.config/sublime-text-3/Packages/User
+cp ../../settings/sublime-text-3/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User
 
 # install python3
 echo ===================================================================================================
