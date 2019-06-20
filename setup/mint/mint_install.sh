@@ -50,6 +50,16 @@ pip3 install numpy
 pip3 install matplotlib
 pip3 install pyserial
 
+# Intsall npm and node.js
+echo ===================================================================================================
+echo npm and nodejs
+sudo apt-get install nodejs -y
+sudo apt-get install npm -y
+
+# Install npm packages
+echo npm packages
+sudo npm install -g browser-sync
+
 # install CommandLine Utilities:
 echo ===================================================================================================
 echo tree
@@ -76,4 +86,11 @@ curl https://i.imgur.com/lhZoAOv.jpg --output ~/pictures/smokyforest_background.
 curl https://i.imgur.com/8ndudfV.jpg --output ~/pictures/dock_background.jpg
 gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/pictures/smokyforest_background.jpg'
 
+# Copy bashrc and vimrc
+cp ../../settings/.bashrc ~/.bashrc
+cp ../../settings/.vimrc ~/.vimrc
+source ~/.bashrc
 
+# Create Scripts folder and copy contents
+mkdir ~/scripts
+cp ../../scripts/ ~/scripts
