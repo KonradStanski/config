@@ -31,9 +31,8 @@ alias gerp='grep'
 # Git aliases
 # https://jonsuh.com/blog/git-command-line-shortcuts/
 alias gstat='git status'
-alias gcom='git commit -m'
-alias gadd='git add .'
 alias gpush='git push'
+alias gpull='git pull'
 alias glog='git log --graph --oneline --decorate --all'
 
 # Common Files to edit
@@ -119,5 +118,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 export ANDROID_STUDIO=$HOME/Documents/android-studio-ide-183.5452501-linux/android-studio
 export PATH=$PATH:$ANDROID_STUDIO/bin
+
+export PATH=$PATH:$HOME/scripts
 
 # OTHER #########################################################
