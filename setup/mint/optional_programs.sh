@@ -40,3 +40,10 @@ sudo chmod +x /opt/jstock/jstock.sh
 echo '' >> ~/.bashrc
 echo '# jstock path and alias' >> ~/.bashrc
 echo 'alias jstock="/opt/jstock/jstock.sh &"' >> ~/.bashrc
+
+# Intsall npm and node.js
+sudo apt-get install nodejs -y
+sudo apt-get install npm -y
+
+# Install npm packages
+

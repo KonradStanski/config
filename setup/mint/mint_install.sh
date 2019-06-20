@@ -50,16 +50,6 @@ pip3 install numpy
 pip3 install matplotlib
 pip3 install pyserial
 
-# Intsall npm and node.js
-echo ===================================================================================================
-echo npm and nodejs
-sudo apt-get install nodejs -y
-sudo apt-get install npm -y
-
-# Install npm packages
-echo npm packages
-sudo npm install -g browser-sync
-
 # install CommandLine Utilities:
 echo ===================================================================================================
 echo tree
