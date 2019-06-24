@@ -80,6 +80,9 @@ gdiff(){
 	sudo git reset > /dev/null
 }
 
+# Calculator
+calc(){ awk "BEGIN{ print $* }" ;}
+
 # BASH prompt https://misc.flogisoft.com/bash/tip_colors_and_formatting
 shopt -s checkwinsize
 green="\001$(tput setaf 34)\002"
