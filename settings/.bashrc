@@ -39,6 +39,8 @@ alias glog='git log --graph --oneline --decorate --all'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 alias srcbash='source ~/.bashrc'
+alias tmuxrc='vim ~/.tmux.conf'
+alias srctmux='tmux source-file ~/.tmux.conf'
 
 # SSH
 alias sshcore='ssh <insert whatever here>'
