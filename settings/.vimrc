@@ -2,6 +2,9 @@
 "Encoding
 set encoding=utf-8
 
+"enable actual color in tmux
+set background=dark
+
 "Show line numbers
 set number
 

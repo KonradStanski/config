@@ -6,7 +6,9 @@ fi
 
 # GENERAL SETTINGS ###########################################
 # Uncomment if you want to use tmux by default
-# [[ $TERM != "screen" ]] && exec tmux
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 # ALIASES ####################################################
 # Common aliases
