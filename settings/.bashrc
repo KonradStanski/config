@@ -36,6 +36,7 @@ alias gstat='git status'
 alias gpush='git push'
 alias gpull='git pull'
 alias glog='git log --graph --oneline --decorate --all'
+alias gdiff='git add .;git status -v;git reset'
 
 # Common Files to edit
 alias vimrc='vim ~/.vimrc'
@@ -75,13 +76,6 @@ gdone(){
 #remove directory
 rmdir(){
 	rm -r -f "$1"
-}
-
-#Get defference between current and remote repo
-gdiff(){
-	git add . > /dev/null
-	git status -v
-	sudo git reset > /dev/null
 }
 
 # Calculator
