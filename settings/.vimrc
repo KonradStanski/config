@@ -30,12 +30,27 @@ set nocompatible
 "Status bar
 set laststatus=2
 
+"Allow end of line editing
+set virtualedit+=onemore
+
 "Display different types of white spaces.
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Set status line display
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+
+"Speed up scrolling in Vim
+set ttyfast
+
+"Hide buffers when they are abandoned
+set hidden
+
+"Automatically wrap text that extends beyond the screen length.
+set wrap
+
+"KEYBINDINGS""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 
 "MATCHING"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,17 +66,6 @@ set ignorecase
 "Include only uppercase words with uppercase search term
 set smartcase
 
-"Hide buffers when they are abandoned
-set hidden
-
-"Automatically wrap text that extends beyond the screen length.
-set wrap
-
-"Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-
 "Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
 "set textwidth=79
 set formatoptions=tcqrn1
@@ -75,9 +79,6 @@ set noshiftround
 set scrolloff=5
 " Fixes common backspace problems
 set backspace=indent,eol,start
-
-"Speed up scrolling in Vim
-set ttyfast
 
 "Display options
 set showmode
