@@ -74,6 +74,9 @@ git config --global credential.helper store
 # Load Backgrounds
 curl https://i.imgur.com/lhZoAOv.jpg --output ~/pictures/smokyforest_background.jpg
 curl https://i.imgur.com/8ndudfV.jpg --output ~/pictures/dock_background.jpg
+curl https://i.imgur.com/apNgmSO.jpg --output ~/pictures/mars_background.jpg
+curl https://i.imgur.com/cqeMox0.jpg --output ~/pictures/earth_background.jpg
+curl https://i.imgur.com/Sux2Age.jpg --output ~/pictures/apple_background.jpg
 gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/pictures/smokyforest_background.jpg'
 
 # Copy bashrc and vimrc
