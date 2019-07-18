@@ -61,9 +61,14 @@ echo "${myip}"
 echo "---------------------------------------------------"
 }
 
-# get cheat sheet for a command
+# Get cheat sheet for a command
 cheat(){
 	curl cheat.sh/"$1"
+}
+
+# Attach to tmux session
+tmuxa(){
+	tmux attach-session -t "$1"
 }
 
 # Do entire git workflow
