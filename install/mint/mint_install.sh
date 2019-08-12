@@ -55,6 +55,9 @@ echo ===========================================================================
 echo tree
 sudo apt install tree -y
 
+echo glanecs
+sudo apt install glances -y
+
 # Load settings
 # opposite is dconf dump / > cinnamon_settings.conf
 echo ===================================================================================================
@@ -72,12 +75,12 @@ git config --global user.name konradStanski
 git config --global credential.helper store
 
 # Load Backgrounds
-curl https://i.imgur.com/lhZoAOv.jpg --output ~/pictures/smokyforest_background.jpg
-curl https://i.imgur.com/8ndudfV.jpg --output ~/pictures/dock_background.jpg
-curl https://i.imgur.com/apNgmSO.jpg --output ~/pictures/mars_background.jpg
-curl https://i.imgur.com/cqeMox0.jpg --output ~/pictures/earth_background.jpg
-curl https://i.imgur.com/Sux2Age.jpg --output ~/pictures/apple_background.jpg
-gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/pictures/smokyforest_background.jpg'
+curl https://i.imgur.com/lhZoAOv.jpg --output ~/pictures/backgrounds/smokyforest_background.jpg
+curl https://i.imgur.com/8ndudfV.jpg --output ~/pictures/backgrounds/dock_background.jpg
+curl https://i.imgur.com/apNgmSO.jpg --output ~/pictures/backgrounds/mars_background.jpg
+curl https://i.imgur.com/cqeMox0.jpg --output ~/pictures/backgrounds/earth_background.jpg
+curl https://i.imgur.com/Sux2Age.jpg --output ~/pictures/backgrounds/apple_background.jpg
+gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/pictures/backgrounds/smokyforest_background.jpg'
 
 # Copy bashrc and vimrc
 cp ../../settings/.bashrc ~/.bashrc
