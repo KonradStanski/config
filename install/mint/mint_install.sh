@@ -87,3 +87,5 @@ source ~/.bashrc
 # Create Scripts folder and copy contents
 mkdir ~/scripts
 cp ../../scripts/ ~/scripts
+
+# Inorder to launch terminal in no border mode you must make a hotkey with gnome-terminal --hide-menubar
