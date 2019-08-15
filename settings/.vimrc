@@ -46,8 +46,8 @@ set ttyfast
 "Hide buffers when they are abandoned
 set hidden
 
-"Automatically wrap text that extends beyond the screen length.
-set wrap
+"Dont Wrap text
+set nowrap
 
 "KEYBINDINGS""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

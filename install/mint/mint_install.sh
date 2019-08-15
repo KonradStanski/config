@@ -28,9 +28,16 @@ echo sublime
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt install sublime-text -y
-# Setup custom sublime settings
-cp ../../settings/sublime-text-3/Package\ Control.sublime-settings ~/.config/sublime-text-3/Packages/User
-cp ../../settings/sublime-text-3/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User
+
+# Install Vim
+sudo apt isntall vim -y
+
+# Install Tmux
+echo ===================================================================================================
+echo Tmux
+sudo apt install tmux -y
+sudo apt install acpi
+cp ../../settings/.tmux.conf ~/.tmux.conf
 
 # install python3
 echo ===================================================================================================
@@ -62,7 +69,7 @@ sudo apt install glances -y
 # opposite is dconf dump / > cinnamon_settings.conf
 echo ===================================================================================================
 echo settings
-dconf load / < cinnamon_settings.conf
+dconf load / < mint_settings.conf
 
 # update all installed packages
 echo ===================================================================================================
@@ -75,12 +82,12 @@ git config --global user.name konradStanski
 git config --global credential.helper store
 
 # Load Backgrounds
-curl https://i.imgur.com/lhZoAOv.jpg --output ~/pictures/backgrounds/smokyforest_background.jpg
-curl https://i.imgur.com/8ndudfV.jpg --output ~/pictures/backgrounds/dock_background.jpg
-curl https://i.imgur.com/apNgmSO.jpg --output ~/pictures/backgrounds/mars_background.jpg
-curl https://i.imgur.com/cqeMox0.jpg --output ~/pictures/backgrounds/earth_background.jpg
-curl https://i.imgur.com/Sux2Age.jpg --output ~/pictures/backgrounds/apple_background.jpg
-gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/pictures/backgrounds/smokyforest_background.jpg'
+curl -o ~/Pictures/backgrounds/smokyforest_background.jpg https://i.imgur.com/lhZoAOv.jpg
+curl -o ~/Pictures/backgrounds/dock_background.jpg https://i.imgur.com/8ndudfV.jpg
+curl -o ~/Pictures/backgrounds/mars_background.jpg https://i.imgur.com/apNgmSO.jpg
+curl -o ~/Pictures/backgrounds/earth_background.jpg https://i.imgur.com/cqeMox0.jpg
+curl -o ~/Pictures/backgrounds/apple_background.jpg https://i.imgur.com/Sux2Age.jpg
+gsettings set org.cinnamon.desktop.background picture-uri 'file:///home/konrad/Pictures/backgrounds/smokyforest_background.jpg'
 
 # Copy bashrc and vimrc
 cp ../../settings/.bashrc ~/.bashrc
@@ -90,5 +97,9 @@ source ~/.bashrc
 # Create Scripts folder and copy contents
 mkdir ~/scripts
 cp ../../scripts/ ~/scripts
+
+# Setup custom sublime settings
+cp ../../settings/sublime-text-3/Package\ Control.sublime-settings ~/.config/sublime-text-3/Packages/User
+cp ../../settings/sublime-text-3/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User
 
 # Inorder to launch terminal in no border mode you must make a hotkey with gnome-terminal --hide-menubar
