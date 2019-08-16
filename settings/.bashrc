@@ -78,6 +78,12 @@ gdone(){
     git push
 }
 
+# Clone repo
+gclone(){
+  git clone https://github.com/"$1".git
+}
+
+
 #remove directory
 rmdir(){
 	rm -r -f "$1"
