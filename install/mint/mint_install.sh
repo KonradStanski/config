@@ -30,7 +30,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt install sublime-text -y
 
 # Install Vim
-sudo apt isntall vim -y
+sudo apt install vim -y
 
 # Install Tmux
 echo ===================================================================================================
@@ -103,3 +103,8 @@ cp ../../settings/sublime-text-3/Package\ Control.sublime-settings ~/.config/sub
 cp ../../settings/sublime-text-3/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User
 
 # Inorder to launch terminal in no border mode you must make a hotkey with gnome-terminal --hide-menubar
+#
+# Command to restart mouse driver
+# sudo modprobe -r hid-multitouch && sudo modprobe hid-multitouch
+#
+#
