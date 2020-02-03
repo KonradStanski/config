@@ -76,6 +76,10 @@ gclone(){
 }
 
 
+gcom(){
+  git commit -m"$*"
+}
+
 #remove directory
 rmdir(){
 	rm -r -f "$1"
