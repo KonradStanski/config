@@ -95,14 +95,25 @@ autoload -U promptinit && promptinit
 setopt prompt_subst
 
 PROMPT='%B%F{28}[%f%b' #[
-PROMPT+='%B%F{20}%n%f%b' #username
+PROMPT+='%B%F{21}%n%f%b' #username
 PROMPT+='%F{240}@ %f' #@
-PROMPT+='%B%F{20}%~%f%b' #dir
+PROMPT+='%B%F{21}%~%f%b' #dir
 PROMPT+='%B%F{28}]%f%b' #]
-PROMPT+='%F{214}$(git_branch)%f' #git
+# PROMPT+='%F{214}$(git_branch)%f' #git
 PROMPT+='%F{240}:%f ' #:
 
-RPROMPT='%(?.%F{green}√.%F{red}?%?)%f' #result
+#set git right prompt
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{214}(%b)%f'
+zstyle ':vcs_info:*' enable git
+RPROMPT+=' %(?.%F{green}√.%F{red}?%?)%f' #result of last command
+
+# ZSH specific stuff
+autoload -Uz compinit && compinit
 
 # PATHS #########################################################
 export PATH=$PATH:$ANDROID_STUDIO/bin
@@ -110,7 +121,6 @@ export PATH=$PATH:$HOME/scripts
 export ANDROID_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
-
 
 # OTHER #########################################################
 export NVM_DIR=~/.nvm
