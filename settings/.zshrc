@@ -75,7 +75,7 @@ gclone(){
   git clone https://github.com/"$1".git
 }
 
-
+# Commit with message
 gcom(){
   git commit -m"$*"
 }
