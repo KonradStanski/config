@@ -1,11 +1,15 @@
 #!/bin/sh
 # Make first window
 cd ~/dev/qbo-homepage-ui
+
+
 tmux new-session -d
 # make split
 cd ~/dev/qbo-homepage-widgets-ui
+tmux send-keys "grunt devServer"
 tmux rename-window Serve
 tmux split-window -h
+tmux send-keys "yarn serve --remote --port=34213"
 
 # make homepage
 cd ~/dev/qbo-homepage-ui
