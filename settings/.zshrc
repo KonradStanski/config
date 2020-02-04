@@ -66,19 +66,20 @@ tmuxa(){
 # Do entire git workflow
 gdone(){
     git add .
-    git commit -a -m "$1"
+    git commit -a -m "$*"
     git push
 }
+
+gcom(){
+  git commit -m"$*"
+}
+
 
 # Clone repo
 gclone(){
   git clone https://github.com/"$1".git
 }
 
-# Commit with message
-gcom(){
-  git commit -m"$*"
-}
 
 #remove directory
 rmdir(){
@@ -98,22 +99,23 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 autoload -U promptinit && promptinit
 setopt prompt_subst
 
-PROMPT='%B%F{28}[%f%b' #[
-PROMPT+='%B%F{21}%n%f%b' #username
-PROMPT+='%F{240}@ %f' #@
-PROMPT+='%B%F{21}%~%f%b' #dir
-PROMPT+='%B%F{28}]%f%b' #]
-# PROMPT+='%F{214}$(git_branch)%f' #git
-PROMPT+='%F{240}:%f ' #:
+PROMPT='%B%F{34}[%f%b' #[
+PROMPT+='%F{34}%n%f' #username
+PROMPT+='%F{34}@%f' #@
+PROMPT+='%F{34}%m:%f' # comp
+PROMPT+='%U%B%F{27}%~%f%b%u' #dir
+PROMPT+='%B%F{34}]%f%b' #]
+PROMPT+='%F{254}$ %f' #:
 
 #set git right prompt
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{214}(%b)%f'
-zstyle ':vcs_info:*' enable git
+RPROMPT=''
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# RPROMPT=\$vcs_info_msg_0_
+# zstyle ':vcs_info:git:*' formats '%F{214}(%b)%f'
+# zstyle ':vcs_info:*' enable git
+RPROMPT='%F{214}$(git_branch)%f' #git
 RPROMPT+=' %(?.%F{green}√.%F{red}?%?)%f' #result of last command
 
 # ZSH specific stuff
@@ -127,8 +129,10 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 
 # OTHER #########################################################
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+ export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 # Setting PATH for Python 3.8
 # The original version is saved in .bash_profile.pysave
