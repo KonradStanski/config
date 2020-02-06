@@ -47,3 +47,26 @@ sudo apt-get install npm -y
 
 # Install npm packages
 
+
+# Install tilda
+sudo apt-get install tilda
+
+# Install multitouch gestures
+sudo gpasswd -a $USER input
+su - ${USER}
+sudo apt update
+sudo apt install libinput-tools
+
+git clone https://github.com/bulletmark/libinput-gestures.git ~/libinput-gestures
+cd ~/libinput-gestures
+sudo make install 
+libinput-gestures-setup autostart # set it to autostart
+libinput-gestures-setup start
+
+sudo apt install python3 python3-setuptools xdotool python3-gi libinput-tools python-gobject
+git clone https://gitlab.com/cunidev/gestures 
+cd ./gestures
+sudo python3 setup.py install
+#xdotool key "ctrl"+"alt"+Left" as an example
+
+
