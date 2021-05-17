@@ -27,6 +27,12 @@ function extract-audio([string]$infile, [string]$outfile) {
 	}
 }
 
+function gdone([string]$msg) {
+	git add .
+	git commit --message $msg
+	git push
+}
+
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {

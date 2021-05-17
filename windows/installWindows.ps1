@@ -25,6 +25,8 @@ choco install github-desktop
 choco install nvm
 choco install mongodb
 choco install notepadplusplus
+choco install docker-cli
+choco install awscli
 
 # Misc Utility
 choco install ffmpeg
@@ -39,7 +41,7 @@ choco install qbittorrent
 choco install pandoc
 choco install powertoys
 choco install rufus
-choco install pdfsam.install
+choco install pdfsam
 choco install procmon
 choco install obs-studio
 choco install virtuawin
