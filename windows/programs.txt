@@ -1,31 +1,3 @@
-==========WINDOWS============
-=========PROGRAMMING=========
-python3
-git
-sublime
-atom
-cmder
-arduino
-ubuntu shell/bash shell
-node.js
-moba xterm
-
-=========UTILITY=========
-Spotify
-chrome
-7-zip
-qbitorrent
-foxit
-calibre
-geogebra
-wolfram alpha
-irfanview
-vlc
-word
-excel
-powerpoint
-virtualbox
-
 =========CREATION=========
 rhino
 fusion 360
@@ -46,12 +18,4 @@ ahk
 virtuawin
 google drive
 clover
-daemon tools
-rufus
-kmspico
-
-=========DEBUGGING=========
-windirstat
-Defraggler
-Recuva
 
