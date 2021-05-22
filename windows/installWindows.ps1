@@ -26,6 +26,7 @@ choco install nvm
 choco install mongodb
 choco install notepadplusplus
 choco install docker-cli
+choco install docker-desktop
 choco install awscli
 
 # Misc Utility

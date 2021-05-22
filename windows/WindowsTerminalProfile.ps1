@@ -3,7 +3,6 @@ Import-Module oh-my-posh
 Set-PoshPrompt -Theme fish
 
 # ALIASES
-
 function touch([string]$filename) {
 	if ("$filename" -eq "") {
 		Write-Host "Filename cannot be empty"
