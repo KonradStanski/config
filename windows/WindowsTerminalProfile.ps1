@@ -32,6 +32,10 @@ function gdone([string]$msg) {
 	git push
 }
 
+function exp() {
+	explorer .
+}
+
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
