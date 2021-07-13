@@ -28,12 +28,13 @@ choco install notepadplusplus
 choco install docker-cli
 choco install docker-desktop
 choco install awscli
+choco install redis-64
 
 # Misc Utility
 choco install ffmpeg
 choco install 7zip
 choco install vlc
-choco install malwarebytes
+# choco install malwarebytes
 choco install autohotkey
 choco install calibre
 choco install windirstat
@@ -46,7 +47,7 @@ choco install pdfsam
 choco install procmon
 choco install obs-studio
 choco install virtuawin
-choco install geogebra-geometry
+# choco install geogebra-geometry
 choco install everything
 # choco install clover
 
