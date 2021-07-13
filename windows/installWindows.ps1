@@ -29,6 +29,7 @@ choco install docker-cli
 choco install docker-desktop
 choco install awscli
 choco install redis-64
+choco install make
 
 # Misc Utility
 choco install ffmpeg
