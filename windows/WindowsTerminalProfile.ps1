@@ -12,6 +12,16 @@ function touch([string]$filename) {
 	}
 }
 
+function loc() {
+    Get-ChildItem . -Include *.* -Recurse | ForEach-Object { (Get-Content $_).Count } | measure-object -sum -Average -Maximum -Minimum
+    Get-ChildItem -re -in "*.*" |
+    Foreach-Object { 
+        $fileStats = Get-Content $_.FullName | Measure-Object -line
+        $linesInFile = $fileStats.Lines
+        Write-Host "$linesInFile = $_" 
+    } 
+}
+
 function extract-audio([string]$infile, [string]$outfile) {
 	if ("$infile" -eq "") {
 		Write-Host "Please provide an input video file"
