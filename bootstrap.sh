@@ -15,6 +15,7 @@ install_linux() {
    # commands to install software on Linux go here
    echo "Bootstrapping linux config"
    cd install/linux
+   chmod +x ./install.sh
    ./install.sh
    cd ../../stow
    make stow dir=linux
@@ -24,9 +25,10 @@ install_macos() {
    # commands to install software on macOS go here
    echo "Bootstrapping macos config"
    cd install/macos
+   chmod +x ./install.sh
    ./install.sh
    cd ../../stow
-   make -f stow/make stow dir=macos
+   make stow dir=macos
 }
 
 if [ "$(uname)" == "Darwin" ]; then
