@@ -35,6 +35,10 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 # Settings for terminal prompt
 autoload -U promptinit && promptinit
 setopt prompt_subst
+# needed for git prompt
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 # main prompt
 PROMPT='%B%F{34}[%f%b' #[
 PROMPT+='%F{34}%n%f' #username
