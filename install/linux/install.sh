@@ -3,20 +3,31 @@
 #              PRIMARY APT PROGRAMS                 #
 #####################################################
 
-# Set the text color to red using tput
-tput setaf 1
+# Check if the user is running the script with root privileges
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run with root privileges (sudo)"
+  exit 1
+fi
 
-# Parse the file containing the list of programs to install
-while read program; do
-  # Install the program using apt
-  if ! apt install -y $program; then
-    # Print an error message if the installation fails
-    echo "Error: Failed to install $program"
+# Read the file line by line
+while read -r line; do
+  # Set the text color to green
+  tput setaf 2
+  # Print the program name with a header
+  echo "Installing program: $line"
+  # Reset the text color
+  tput sgr0
+
+  # Install the program specified in each line, forcing apt-get to stop on errors
+  if ! apt-get install -y -f "$line"; then
+    # Set the text color to red
+    tput setaf 1
+    # Print the error message
+    echo "Failed to install program: $line"
+    # Reset the text color
+    tput sgr0
   fi
-done < apt.txt
-
-# Reset the text color to the default using tput
-tput sgr0
+done <apt.txt
 
 #####################################################
 #                   OTHER PROGRAMS                  #
@@ -24,7 +35,6 @@ tput sgr0
 
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-
 
 #####################################################
 #                   CHANGE SETTINGS                 #
