@@ -7,4 +7,3 @@ hstr
 htop
 curl
 wget
-
