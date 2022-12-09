@@ -5,4 +5,6 @@ neovim
 tmux
 hstr
 htop
+curl
+wget
 
