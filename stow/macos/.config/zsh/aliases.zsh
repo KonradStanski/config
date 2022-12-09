@@ -29,3 +29,8 @@ alias zshrc='$EDITOR ~/.zshrc'
 alias srczsh='source ~/.zshrc'
 alias tmuxrc='$EDITOR ~/.tmux.conf'
 alias srctmux='tmux source-file ~/.tmux.conf'
+
+#remove directory
+rmdir(){
+	rm -r -f "$1"
+}
