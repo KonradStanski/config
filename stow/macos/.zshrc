@@ -1,3 +1,6 @@
+#####################################################
+#              ZSH CONFIGURATION FILE               #
+#####################################################
 # antigen
 source $HOME/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
