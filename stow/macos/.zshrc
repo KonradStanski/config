@@ -23,7 +23,7 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
 # setting my default editor
-EDITOR=nvim
+export EDITOR=nvim
 
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh

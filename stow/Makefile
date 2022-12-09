@@ -2,8 +2,8 @@
 #        make TARGET dir=linux
 
 dir = macos
-# folding=--no-folding
-folding=
+folding=--no-folding
+# folding=
 
 
 .PHONY : stow
