@@ -1,0 +1,1 @@
+source ~/.config/gdb/gdbmain

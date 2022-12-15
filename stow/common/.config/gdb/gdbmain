@@ -1,0 +1,30 @@
+set print static off
+set print demangle on
+set print asm-demangle on
+
+set follow-fork-mode parent
+set breakpoint pending on
+
+set history save
+set verbose off
+set print pretty on
+set print array off
+set print array-indexes on
+set python print-stack full
+set pagination off
+
+alias saveb = save breakpoints /tmp/dbg.brk
+alias loadb = source /tmp/dbg.brk
+alias tuion = tui enable && fs cmd && winheight src 70
+alias tuioff = tui disable
+alias pybt = call (void) printPythonBacktrace(1)
+
+define pstr
+   printf "%s\n", $arg0.stdString().c_str()
+end
+
+define pstring
+   pstr $arg0.stringValue()
+end
+
+source ~/.config/gdb/gdblayout.py
