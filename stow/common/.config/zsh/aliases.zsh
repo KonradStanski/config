@@ -35,3 +35,10 @@ alias srctmux='tmux source-file ~/.tmux.conf'
 rmdir(){
 	rm -r -f "$1"
 }
+
+# Do entire git workflow
+gdone(){
+    git add .
+    git commit -a -m "$*"
+    git push
+}
