@@ -26,9 +26,9 @@ alias gbranch='git branch -a'
 
 # Common Files to edit (use EDITOR variable)
 alias vimrc=
-alias zshrc='$EDITOR ~/.zshrc'
+alias zshrc='$EDITOR ~/.config/zsh/main.zsh'
 alias srczsh='source ~/.zshrc'
-alias tmuxrc='$EDITOR ~/.tmux.conf'
+alias tmuxrc='$EDITOR ~/.config/tmux/main.tmux.conf'
 alias srctmux='tmux source-file ~/.tmux.conf'
 
 #remove directory
