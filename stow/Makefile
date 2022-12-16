@@ -1,5 +1,7 @@
 # USAGE: make TARGET
 
+# Worth looking into --override for common files to allow subclassing files and making hierarchies 
+
 dir = $(shell uname)
 # The following sets wether or not stow creates symlinked folders, or just regular folders. --no-folding mean regular folders.
 folding=--no-folding

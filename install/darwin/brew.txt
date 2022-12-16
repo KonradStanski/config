@@ -1,0 +1,17 @@
+tig
+htop
+lua
+neovim
+ncurses
+nmap
+nvm
+perl
+ruby
+sqlite
+stow
+tmux
+tree
+vim
+wget
+yabai
+
