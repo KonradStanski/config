@@ -18,17 +18,17 @@ install_linux() {
    chmod +x ./install.sh
    ./install.sh
    cd ../../stow
-   make stow dir=linux
+   make stow
 }
 
 install_macos() {
    # commands to install software on macOS go here
    echo "Bootstrapping macos config"
-   cd install/macos
+   cd install/darwin
    chmod +x ./install.sh
    ./install.sh
    cd ../../stow
-   make stow dir=macos
+   make stow
 }
 
 if [ "$(uname)" == "Darwin" ]; then

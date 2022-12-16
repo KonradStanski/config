@@ -5,17 +5,19 @@
 source $HOME/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle command-not-found
+antigen bundle copyfile
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle agkozak/zsh-z
 antigen apply
+
+# enables completion engine
+autoload -Uz compinit && compinit
 
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/paths.zsh
-
-# enables zsh-completions
-autoload -Uz compinit && compinit
 
 # history search
 alias hh=hstr                    # hh to be alias for hstr

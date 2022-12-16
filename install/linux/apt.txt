@@ -7,3 +7,4 @@ hstr
 htop
 curl
 wget
+tig
