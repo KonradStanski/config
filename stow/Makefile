@@ -1,7 +1,6 @@
-# USAGE: make TARGET dir=macos
-#        make TARGET dir=linux
+# USAGE: make TARGET
 
-dir = macos
+dir = $(shell uname)
 folding=--no-folding
 # folding=
 
