@@ -24,8 +24,11 @@ alias glog='git log --graph --oneline --decorate --all'
 alias gdiff='git add .;git status -v;git reset'
 alias gbranch='git branch -a'
 
+# tig
+alias tstat='tig status'
+
 # Common Files to edit (use EDITOR variable)
-alias vimrc=
+alias vimrc='$EDITOR ~/.config/vim/main.vim'
 alias zshrc='$EDITOR ~/.config/zsh/main.zsh'
 alias srczsh='source ~/.zshrc'
 alias tmuxrc='$EDITOR ~/.config/tmux/main.tmux.conf'
