@@ -35,6 +35,7 @@ export EDITOR=nvim
 
 # colors I want for files and folder ect when "ls"
 export LSCOLORS="gxfxcxdxbxegedabagacad"
+export CLICOLOR=1
 
 # Settings for terminal prompt
 autoload -U promptinit && promptinit

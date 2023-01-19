@@ -3,7 +3,8 @@
 #####################################################
 # Common aliases
 alias q='exit'
-alias ls='ls -GHp'
+#alias ls='ls -GHp'
+alias ls="ls --color=auto"
 alias la='ls -a'
 alias ll='ls -l'
 alias ..='cd ..'
