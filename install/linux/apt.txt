@@ -8,3 +8,5 @@ htop
 curl
 wget
 tig
+make
+stow
