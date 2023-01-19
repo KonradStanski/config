@@ -16,11 +16,13 @@ class CommandChooser():
       self.option_id_index = 0
       # Splitting character for the option string
       self.option_split_char = ':'
+      # Shell true or false (used for commands with weird escape sequences that need to be a single string)
+      self.shell = False
 
 
    # Get the list of options
    def get_options(self):
-      options = subprocess.run(self.get_options_command, capture_output=True).stdout.strip().decode('utf-8')
+      options = subprocess.run(self.get_options_command, shell=self.shell, capture_output=True).stdout.strip().decode('utf-8')
       options = options.split('\n')
       return options
 
