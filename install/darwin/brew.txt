@@ -16,3 +16,4 @@ wget
 yabai
 fzf
 exa
+stats

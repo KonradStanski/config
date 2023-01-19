@@ -46,3 +46,6 @@ gdone(){
     git commit -a -m "$*"
     git push
 }
+
+# neovim
+alias nv='nvim'

@@ -7,9 +7,9 @@ antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle copyfile
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle Aloxaf/fzf-tab
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle agkozak/zsh-z
 antigen apply
 
@@ -26,6 +26,9 @@ alias hh=hstr                    # hh to be alias for hstr
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+
+# bind key for completion accept
+bindkey '^ ' autosuggest-accept
 
 # zsh history settings
 HISTFILE=~/.zsh_history
