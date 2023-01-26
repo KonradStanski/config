@@ -8,7 +8,7 @@ antigen bundle command-not-found
 antigen bundle copyfile
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
-antigen bundle Aloxaf/fzf-tab
+# antigen bundle Aloxaf/fzf-tab
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle agkozak/zsh-z
 antigen apply
@@ -19,7 +19,7 @@ autoload -Uz compinit && compinit
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/paths.zsh
-source $HOME/.config/fzf/fzf.zsh
+# source $HOME/.config/fzf/fzf.zsh
 
 # history search
 alias hh=hstr                    # hh to be alias for hstr
