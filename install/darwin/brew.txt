@@ -1,19 +1,21 @@
-tig
-htop
-lua
-neovim
-ncurses
-nmap
-nvm
-perl
-ruby
-sqlite
-stow
-tmux
-tree
-vim
-wget
-yabai
-fzf
-exa
-stats
+tmux # terminal multiplexer
+neovim # my fav terminal editor
+vim # terminal editor
+wget # web downloader
+tig # git in terminal
+htop # process viewer
+lua # scripting language
+ncurses # terminal library
+nmap # network scanner
+nvm # node version manager
+perl # scripting language
+ruby # scripting language
+sqlite # database
+stow # symlink manager
+tree # directory viewer
+yabai # window manager
+fzf # fuzzy finder
+exa # ls replacement
+stats # system monitor
+--cask alt-tab # window switcher
+pidof # get process pid from name
