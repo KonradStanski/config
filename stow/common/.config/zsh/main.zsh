@@ -19,6 +19,7 @@ autoload -Uz compinit && compinit
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/paths.zsh
+source $HOME/.config/zsh/platform.zsh
 # source $HOME/.config/fzf/fzf.zsh
 
 # history search
