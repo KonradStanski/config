@@ -3,6 +3,7 @@
 #####################################################
 # Common aliases
 alias q='exit'
+alias re='reset'
 #alias ls='ls -GHp'
 alias ls="ls --color=auto"
 alias la='ls -a'
@@ -34,6 +35,7 @@ alias zshrc='$EDITOR ~/.config/zsh/main.zsh'
 alias srczsh='source ~/.zshrc'
 alias tmuxrc='$EDITOR ~/.config/tmux/main.tmux.conf'
 alias srctmux='tmux source-file ~/.tmux.conf'
+alias aliases='$EDITOR ~/.config/zsh/aliases.zsh'
 
 #remove directory
 rmdir(){
