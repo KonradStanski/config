@@ -7,8 +7,8 @@
 # magnet
 # Maybe isntall amethyst instead of magnet???
 # display link
-# vscode
-# github desktop
+# vscode brew install --cask visual-studio-code
+# github desktop brew install --cask github
 # configure chrome tab navigation shortcut in keyboard shortcuts
 
 
