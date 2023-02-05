@@ -30,10 +30,10 @@ class CommandChooser():
         return options
 
     def print_options(self, options, selected_index):
-        width, _ = subprocess.run(['stty', 'size'], capture_output=True).stdout.decode('utf-8').split()
+        _, width = subprocess.run(['stty', 'size'], capture_output=True).stdout.decode('utf-8').split()
         width = int(width)
         # truncate the options to the width of the terminal
-        options = [option[:width] for option in options]
+        options = [option[:width-2] for option in options]
         for i, option in enumerate(options):
             if i == selected_index:
                 print(f"\033[1m> {option}\033[0m")
