@@ -29,6 +29,9 @@ truncate_to_repo = false
 style = 'underline bold fg:27'
 truncation_symbol = '…/'
 
+[character]
+error_symbol = "[X](bold red) "
+
 [git_branch]
 format = " [$symbol$branch]($style)"
 
