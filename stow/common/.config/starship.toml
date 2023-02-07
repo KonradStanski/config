@@ -14,7 +14,6 @@ disabled = false
 [username]
 style_user = "bold fg:34"
 show_always = true
-style = ''
 format = '[$user@]($style)'
 
 [hostname]

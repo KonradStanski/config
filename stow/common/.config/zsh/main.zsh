@@ -21,7 +21,7 @@ source $HOME/.config/zsh/paths.zsh
 source $HOME/.config/zsh/platform.zsh
 
 # bind key for completion accept
-bindkey '^ ' autosuggest-accept
+bindkey '`' autosuggest-accept
 
 # zsh history settings
 HISTFILE=~/.zsh_history

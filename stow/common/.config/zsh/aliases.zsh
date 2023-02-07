@@ -27,7 +27,10 @@ alias gdiff='git add .;git status -v;git reset'
 alias gbranch='git branch -a'
 
 # tig
-alias tstat='tig status'
+alias stig='tig status'
+
+# neovim
+alias nv='nvim'
 
 # Common Files to edit (use EDITOR variable)
 alias vimrc='$EDITOR ~/.config/vim/main.vim'
@@ -49,5 +52,3 @@ gdone(){
     git push
 }
 
-# neovim
-alias nv='nvim'
