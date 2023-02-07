@@ -8,9 +8,11 @@
 install_linux() {
    # commands to install software on Linux go here
    echo "Bootstrapping linux config"
+   # install applications
    cd install/linux
    chmod +x ./install.sh
    ./install.sh
+   # stow config files
    cd ../../stow
    make stow
 }
@@ -18,9 +20,11 @@ install_linux() {
 install_macos() {
    # commands to install software on macOS go here
    echo "Bootstrapping macos config"
+   # install applications
    cd install/darwin
    chmod +x ./install.sh
    sudo -u $SUDO_USER ./install.sh
+   # stow config files
    cd ../../stow
    make stow
 }
@@ -29,7 +33,7 @@ check_sudo() {
    # Check if the user is running the script with root privileges
    if [[ $EUID -ne 0 ]]; then
      echo "This script must be run with root privileges (sudo)"
-     exit 1
+     sudo -v
    fi
 }
 
