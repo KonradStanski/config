@@ -6,6 +6,8 @@
 # magnet
 # Maybe isntall amethyst instead of magnet???
 # display link
+# grand perspective (windirstat)
+# google drive
 
 #####################################################
 #               PRE-INSTALL PROGRAMS                #

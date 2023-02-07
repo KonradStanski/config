@@ -1,0 +1,50 @@
+# left prompt 
+format = """[\\[](bold fg:34)$username$hostname$directory
+$character\
+"""
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
+add_newline = false
+
+[line_break]
+disabled = false
+
+[username]
+style_user = "bold fg:34"
+show_always = true
+style = ''
+format = '[$user@]($style)'
+
+[hostname]
+ssh_only = false
+style = 'bold fg:34'
+format = '[$ssh_symbol$hostname:]($style)'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)[\]](bold fg:34)'
+truncation_length = 5
+truncate_to_repo = false
+style = 'underline bold fg:27'
+truncation_symbol = '…/'
+
+[git_branch]
+format = " [$symbol$branch]($style)"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style)'
+
+[package]
+disabled = true
+
+[python]
+format = "[$symbol$version]($style)"
+style = "bold green"
+
+[rust]
+format = "[$symbol$version]($style)"
+style = "bold green"
+
+[nodejs]
+format = "via [🤖 $version](bold green)"
