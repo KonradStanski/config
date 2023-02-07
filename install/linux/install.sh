@@ -33,8 +33,12 @@ done <apt.txt
 #                   OTHER PROGRAMS                  #
 #####################################################
 
-# Install node version manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# Install node version manager volta
+curl https://get.volta.sh | bash
+
+# Install command line prompt
+sudo snap install starship
+sudo snap install --beta nvim --classic
 
 #####################################################
 #                   CHANGE SETTINGS                 #
