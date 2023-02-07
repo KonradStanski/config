@@ -1,12 +1,12 @@
 git
 tree
 zsh
-neovim
 tmux
-hstr
 htop
 curl
 wget
 tig
 make
 stow
+snapd
+fzf
