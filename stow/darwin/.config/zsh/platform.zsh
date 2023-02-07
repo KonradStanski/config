@@ -3,3 +3,6 @@
 
 # brew settings
 export HOMEBREW_NO_AUTO_UPDATE="1"
+
+# enable fzf key bindings and fuzzy completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
