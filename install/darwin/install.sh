@@ -1,16 +1,11 @@
 #!/bin/bash
 # MANUAL INSTAL:
 # parallels
-# chrome
 # notion
 # stay
 # magnet
 # Maybe isntall amethyst instead of magnet???
 # display link
-# vscode brew install --cask visual-studio-code
-# github desktop brew install --cask github
-# configure chrome tab navigation shortcut in keyboard shortcuts
-
 
 #####################################################
 #               PRE-INSTALL PROGRAMS                #
@@ -41,6 +36,10 @@ brew bundle
 #                   OTHER PROGRAMS                  #
 #####################################################
 
+# Install fzf key bindings and fuzzy completion
+$(brew --prefix)/opt/fzf/install
+# use this to uninstall
+# $(brew --prefix)/opt/fzf/uninstall
 
 #####################################################
 #                   CHANGE SETTINGS                 #
