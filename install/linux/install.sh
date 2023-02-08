@@ -49,6 +49,9 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/servy/.zp
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 
+# install all brew programs
+brew bundle
+
 #####################################################
 #                   CHANGE SETTINGS                 #
 #####################################################
