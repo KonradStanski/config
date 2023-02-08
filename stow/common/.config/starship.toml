@@ -38,6 +38,13 @@ format = "[$symbol$branch]($style)"
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style)'
 
+[time]
+disabled = false
+use_12hr = true
+time_format = '%I:%M%p'
+format = '[$time]($style)'
+style = 'grey'
+
 [package]
 disabled = true
 
