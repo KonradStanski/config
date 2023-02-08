@@ -36,5 +36,11 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 export CLICOLOR=1
 
 # starship
-eval "$(starship init zsh)"
+# Check if staship installed be seeing if "starship" runs, if not use backup prompt
+if command -v starship &> /dev/null
+then
+    eval "$(starship init zsh)"
+else
+    source $HOME/.config/zsh/backup_prompt.zsh
+fi
 
