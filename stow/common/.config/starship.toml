@@ -12,13 +12,13 @@ add_newline = false
 disabled = false
 
 [username]
-style_user = "bold fg:34"
+style_user = "fg:34"
 show_always = true
 format = '[$user@]($style)'
 
 [hostname]
 ssh_only = false
-style = 'bold fg:34'
+style = 'fg:34'
 format = '[$ssh_symbol$hostname:]($style)'
 
 [directory]
@@ -29,10 +29,11 @@ style = 'underline bold fg:27'
 truncation_symbol = '…/'
 
 [character]
-error_symbol = "[X](bold red) "
+success_symbol = "[>](green)"
+error_symbol = "[X](bold red)"
 
 [git_branch]
-format = " [$symbol$branch]($style)"
+format = "[$symbol$branch]($style)"
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style)'
