@@ -42,10 +42,6 @@ sudo snap install --beta nvim --classic
 
 # Install linuxbrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Put linuxbrew into path
-echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /home/servy/.zprofile
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/servy/.zprofile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 
