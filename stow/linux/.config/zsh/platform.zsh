@@ -7,3 +7,6 @@ if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] ; then
 elif [ -f ~/.nix-profile/share/fzf/key-bindings.zsh ] ; then
    source ~/.nix-profile/share/fzf/key-bindings.zsh
 fi
+
+# LinuxBrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -33,28 +33,28 @@ success_symbol = "[>](green)"
 error_symbol = "[X](bold red)"
 
 [git_branch]
-format = "[$symbol$branch]($style)"
+format = "[$symbol$branch]($style) "
 
 [git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style)'
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [time]
 disabled = false
 use_12hr = true
 time_format = '%I:%M%p'
-format = '[$time]($style)'
+format = '[$time]($style) '
 style = 'grey'
 
 [package]
 disabled = true
 
 [python]
-format = "[$symbol$version]($style)"
+format = "[$symbol$version]($style) "
 style = "bold green"
 
 [rust]
-format = "[$symbol$version]($style)"
+format = "[$symbol$version]($style) "
 style = "bold green"
 
 [nodejs]
-format = "via [🤖 $version](bold green)"
+format = "via [🤖 $version](bold green) "
