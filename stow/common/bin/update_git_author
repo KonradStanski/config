@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+import subprocess
+
+# Get the current user name and email from the Git configuration
+name = subprocess.run(['git', 'config', 'user.name'], capture_output=True, text=True).stdout.strip()
+email = subprocess.run(['git', 'config', 'user.email'], capture_output=True, text=True).stdout.strip()
+
+# Run the `git rev-list` command to get a list of all commits
+result = subprocess.run(['git', 'rev-list', '--all'], capture_output=True, text=True)
+commits = result.stdout.strip().split('\n')
+
+# Loop over each commit and change the author
+for commit in commits:
+    # Get the current author information for this commit
+    result = subprocess.run(['git', 'log', '-1', '--pretty=format:"%an <%ae>"', commit], capture_output=True, text=True)
+    commit_author = result.stdout.strip()
+
+    # Check if the author needs to be updated
+    if commit_author != f'"{name} <{email}>"':
+        # Prompt the user to confirm the change
+        response = input(f"Change author of commit {commit} from {commit_author} to {name} <{email}>? [y/N] ")
+        if response.lower() == 'y':
+            # Run the `git rebase` command to update the author
+            subprocess.run(['git', 'rebase', '--interactive', f"{commit}^", '--exec', f'git commit --amend --author="{name} <{email}>" --no-edit'], check=True)
