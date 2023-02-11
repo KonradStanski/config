@@ -10,3 +10,4 @@ make
 stow
 snapd
 fzf
+ssh
