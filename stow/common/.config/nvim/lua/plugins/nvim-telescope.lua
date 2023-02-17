@@ -6,23 +6,9 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 --
--- File: init.lua
--- Description: main configuration file
-if vim.fn.has('nvim-0.8') == 0 then
-  error('Need Neovim 0.8+ in order to use this config')
-end
-
--- Import Lua modules --
-local modules = {
-  'loader',
-  'plugins',
-  'core'
-}
-
-
-for _, mod in ipairs(modules) do
-  local ok, err = pcall(require, mod)
-  if not ok then
-    error(('Error loading %s...\n\n%s'):format(mod, err))
-  end
-end
+-- File: plugins/nvim-telescope.lua
+-- Description: nvim-telescope config
+require('telescope').setup()
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')

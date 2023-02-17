@@ -6,23 +6,14 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 --
--- File: init.lua
--- Description: main configuration file
-if vim.fn.has('nvim-0.8') == 0 then
-  error('Need Neovim 0.8+ in order to use this config')
-end
+-- File: plugins/nvim-tree.lua
+-- Description: nvim-tree config
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
--- Import Lua modules --
-local modules = {
-  'loader',
-  'plugins',
-  'core'
-}
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 
-
-for _, mod in ipairs(modules) do
-  local ok, err = pcall(require, mod)
-  if not ok then
-    error(('Error loading %s...\n\n%s'):format(mod, err))
-  end
-end
+-- empty setup using defaults
+require("nvim-tree").setup()

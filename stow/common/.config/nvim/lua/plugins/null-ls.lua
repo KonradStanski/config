@@ -6,23 +6,20 @@
 -- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 --
--- File: init.lua
--- Description: main configuration file
-if vim.fn.has('nvim-0.8') == 0 then
-  error('Need Neovim 0.8+ in order to use this config')
-end
+-- File: plugins/null-ls.lua
+-- Description: null-ls configuration
+local null_ls = require('null-ls')
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+local formatting = null_ls.builtins.formatting
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
--- Import Lua modules --
-local modules = {
-  'loader',
-  'plugins',
-  'core'
-}
-
-
-for _, mod in ipairs(modules) do
-  local ok, err = pcall(require, mod)
-  if not ok then
-    error(('Error loading %s...\n\n%s'):format(mod, err))
-  end
-end
+null_ls.setup({
+    debug = false,
+    sources = {formatting.prettier.with {
+        extra_filetypes = {"toml"},
+        extra_args = {"--no-semi", "--single-quote", "--jsx-single-quote"}
+    }, formatting.black.with {
+        extra_args = {"--fast"}
+    }, formatting.stylua, formatting.google_java_format, diagnostics.flake8}
+})
