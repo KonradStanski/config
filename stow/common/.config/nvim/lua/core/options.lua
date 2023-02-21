@@ -116,6 +116,3 @@ for _, plugin in pairs(disabled_built_ins) do
     g["loaded_" .. plugin] = 1
 end
 
--- Colorscheme
--- By default, use rose-pine
--- cmd('colorscheme rose-pine')

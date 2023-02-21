@@ -35,6 +35,6 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', {}) -- open/close
 vim.keymap.set('n', '<leader>nr', ':NvimTreeRefresh<CR>', {}) -- refresh
 vim.keymap.set('n', '<leader>nf', ':NvimTreeFindFile<CR>', {}) -- search file
 
--- Terminal
-vim.keymap.set('n', '<leader>tt', ':NeotermToggle<CR>', {})
--- vim.keymap.set('n', '<leader>tx', ':NeotermExit<CR>', {})
+-- Copilot
+vim.g.copilot_no_tab_map = true -- make it work with nvim-compe
+vim.keymap.set("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
