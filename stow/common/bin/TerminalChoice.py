@@ -67,8 +67,9 @@ class CommandChooser():
         self.print_options(options, selected_index)
 
         while True:
+            # https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#cursor-controls
             # Move the cursor back to the beginning of the line
-            sys.stdout.write(f"\033[{len(options)}F")
+            sys.stdout.write(f"\033[{len(options)}A")
             self.print_options(options, selected_index)
 
             # Read a single character from the user
@@ -90,6 +91,7 @@ class CommandChooser():
 
         option_id = options[selected_index].split(self.option_split_char)[0]
         # connect to the session using the number
+        print(f"You Chose Option {option_id}")
         subprocess.run(self.choose_option_command + [option_id])
 
 
