@@ -46,14 +46,6 @@ curl https://get.volta.sh | bash
 sudo snap install starship
 sudo snap install --beta nvim --classic
 
-# Install linuxbrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-sudo apt-get install build-essential
-
-# install all brew programs
-brew bundle
-
 #####################################################
 #                   CHANGE SETTINGS                 #
 #####################################################

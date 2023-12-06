@@ -33,7 +33,7 @@ check_sudo() {
    # Check if the user is running the script with root privileges
    if [[ $EUID -ne 0 ]]; then
      echo "This script must be run with root privileges (sudo)"
-     sudo -v
+     exit 
    fi
 }
 
