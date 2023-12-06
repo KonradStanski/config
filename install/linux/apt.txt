@@ -13,3 +13,4 @@ fzf
 ssh
 software-properties-common
 et
+gh
