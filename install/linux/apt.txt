@@ -11,3 +11,5 @@ stow
 snapd
 fzf
 ssh
+software-properties-common
+et
