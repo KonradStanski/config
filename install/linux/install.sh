@@ -9,6 +9,12 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# update apt-get
+sudo apt-get update
+
+# install PPA's
+sudo add-apt-repository ppa:jgmath2000/et
+
 # Read the file line by line
 while read -r line; do
   # Set the text color to green
