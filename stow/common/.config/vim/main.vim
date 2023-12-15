@@ -2,6 +2,38 @@
 "                      VIM CONFIGURATION                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if &term =~ "xterm\\|rxvt"
+  " Vertical line in insert mode (non-blinking)
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  " Block in normal mode (non-blinking)
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  " Underline in replace mode (non-blinking)
+endif
+
+autocmd VimLeave * silent !echo -ne "\<Esc>]50;CursorShape=0\x7"
+
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+
+if stridx(&runtimepath, expand(vimDir)) == -1
+  " vimDir is not on runtimepath, add it
+  let &runtimepath.=','.vimDir
+endif
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    BASIC CONFIGURATION                        "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "Encoding
 set encoding=utf-8
 
@@ -42,7 +74,7 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Set status line display
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 
 "Speed up scrolling in Vim
 set ttyfast
@@ -52,23 +84,6 @@ set hidden
 
 "Dont Wrap text
 set nowrap
-
-"KEYBINDINGS""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-"MATCHING"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Do case insensitive matching
-set ignorecase
-
-"Highlight matching search patterns
-set hlsearch
-"Enable incremental search
-set incsearch
-"Include matching uppercase words with lowercase search term
-set ignorecase
-"Include only uppercase words with uppercase search term
-set smartcase
 
 "Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
 "set textwidth=79
@@ -80,7 +95,26 @@ set expandtab
 set noshiftround
 
 "Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     KEYBINDINGS                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          MATCHING                             "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Do case insensitive matching
+set ignorecase
+"Highlight matching search patterns
+set hlsearch
+"Enable incremental search
+set incsearch
+"Include matching uppercase words with lowercase search term
+set ignorecase
+"Include only uppercase words with uppercase search term
+set smartcase
+
+set scrolloff=20
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
@@ -89,11 +123,3 @@ set showmode
 
 "Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
-
-"Map the <Space> key to toggle a selected fold opened/closed.
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
-
-"Automatically save and load folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview"
