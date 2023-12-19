@@ -20,10 +20,13 @@ class CommandChooser():
         self.option_split_char = ':'
         # Shell true or false (used for commands with weird escape sequences that need to be a single string)
         self.shell = False
+        # Text to use as options instead of a command
+        self.options_text = None
 
     # Get the list of options
-
     def get_options(self):
+        if self.options_text:
+            return self.options_text.split('\n')
         options = subprocess.run(self.get_options_command, shell=self.shell,
                                  capture_output=True).stdout.strip().decode('utf-8')
         options = options.split('\n')
@@ -63,6 +66,9 @@ class CommandChooser():
 
     def run(self):
         options = self.get_options()
+        if len(options) == 0:
+            print("No options found")
+            sys.exit(0)
         selected_index = self.ignore_first_n_lines
         self.print_options(options, selected_index)
 
