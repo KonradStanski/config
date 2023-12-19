@@ -11,7 +11,6 @@ alias ll='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
-alias lg='lazygit'
 
 # typos
 alias sl='ls'
@@ -19,16 +18,8 @@ alias cta='cat'
 alias gerp='grep'
 
 # Git aliases
-# https://jonsuh.com/blog/git-command-line-shortcuts/
-alias gstat='git status'
-alias gpush='git push'
-alias gpull='git pull'
+alias lg='lazygit'
 alias glog='git log --graph --oneline --decorate --all'
-alias gdiff='git add .;git status -v;git reset'
-alias gbranch='git branch -a'
-
-# tig
-alias stig='tig status'
 
 # neovim
 alias nv='nvim'
@@ -36,10 +27,10 @@ alias nv='nvim'
 # Common Files to edit (use EDITOR variable)
 alias vimrc='$EDITOR ~/.config/vim/main.vim'
 alias zshrc='$EDITOR ~/.config/zsh/main.zsh'
-alias srczsh='source ~/.zshrc'
 alias tmuxrc='$EDITOR ~/.config/tmux/main.tmux.conf'
-alias srctmux='tmux source-file ~/.tmux.conf'
 alias aliases='$EDITOR ~/.config/zsh/aliases.zsh'
+alias srctmux='tmux source-file ~/.tmux.conf'
+alias srczsh='source ~/.zshrc'
 
 #remove directory
 rmdir(){

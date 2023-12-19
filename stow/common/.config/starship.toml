@@ -19,7 +19,7 @@ format = '[$user@]($style)'
 [hostname]
 ssh_only = false
 style = 'fg:34'
-format = '[$ssh_symbol$hostname:]($style)'
+format = '[$hostname:]($style)'
 
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style)[\]](bold fg:34)'
