@@ -9,7 +9,7 @@ This will:
 - run `./make stow <OS>`
 
 I should setup using this: 
-https://raw.githubusercontent.com/konradstanski/config/master/README.md
+https://raw.githubusercontent.com/konradstanski/config/master/bootstrap.sh
 to curl and pipe into bash, to bootstrap installing on any system
 
 

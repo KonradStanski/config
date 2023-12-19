@@ -1,16 +1,27 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      VIM CONFIGURATION                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if &term =~ "xterm\\|rxvt"
-  " Vertical line in insert mode (non-blinking)
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  " Block in normal mode (non-blinking)
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  " Underline in replace mode (non-blinking)
+" install vim-plug plugin manager
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-autocmd VimLeave * silent !echo -ne "\<Esc>]50;CursorShape=0\x7"
+"install plugins
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+"if &term =~ "xterm\\|rxvt"
+"  " Vertical line in insert mode (non-blinking)
+"  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"  " Block in normal mode (non-blinking)
+"  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"endif
+
+"autocmd VimLeave * silent !echo -ne "\<Esc>]50;CursorShape=0\x7"
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -33,6 +44,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                    BASIC CONFIGURATION                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Set compatibility to Vim only.
+set nocompatible
 
 "Encoding
 set encoding=utf-8
@@ -42,6 +55,9 @@ set background=dark
 
 "Show line numbers
 set number
+
+"Show tab line with only 1 tab
+set showtabline=2
 
 "Show matching brackets.
 set showmatch
@@ -59,9 +75,6 @@ set mouse=a
 "Turn on syntax highlighting.
 syntax enable
 colorscheme monokai
-
-"Set compatibility to Vim only.
-set nocompatible
 
 "Status bar
 set laststatus=2
@@ -123,3 +136,6 @@ set showmode
 
 "Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
+
+"Auto reload config
+autocmd BufWritePost .vimrc source %
