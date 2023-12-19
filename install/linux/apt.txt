@@ -5,7 +5,6 @@ tmux
 htop
 curl
 wget
-tig
 make
 stow
 snapd

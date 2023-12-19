@@ -31,6 +31,9 @@ SAVEHIST=$HISTSIZE
 # setting my default editor
 export EDITOR=nvim
 
+# set default config folder (needed for macos sometimes)
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # colors I want for files and folder ect when "ls"
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 export CLICOLOR=1

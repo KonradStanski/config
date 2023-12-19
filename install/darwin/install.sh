@@ -4,7 +4,7 @@
 # notion
 # stay
 # magnet
-# Maybe isntall amethyst instead of magnet???
+# Maybe isntall rectangle instead of magnet???
 # display link
 # grand perspective (windirstat)
 # google drive

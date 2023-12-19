@@ -42,6 +42,12 @@ done <apt.txt
 # Install node version manager volta
 curl https://get.volta.sh | bash
 
+# Install lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+
 # Install command line prompt
 sudo snap install starship
 sudo snap install --beta nvim --classic

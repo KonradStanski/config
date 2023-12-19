@@ -11,6 +11,7 @@ alias ll='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
+alias lg='lazygit'
 
 # typos
 alias sl='ls'
