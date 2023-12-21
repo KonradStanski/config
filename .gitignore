@@ -2,3 +2,12 @@ __pycache__/
 *.py[cod]
 *.pyc
 .DS_Store
+stow/common/.config/nvim/.github/ISSUE_TEMPLATE/bug_report.md
+stow/common/.config/nvim/.github/ISSUE_TEMPLATE/config.yml
+stow/common/.config/nvim/.github/ISSUE_TEMPLATE/feature_request.md
+stow/common/.config/nvim/.github/PULL_REQUEST_TEMPLATE/feature.md
+stow/common/.config/nvim/.github/PULL_REQUEST_TEMPLATE/plugin.md
+stow/common/.config/nvim/.github/workflows/stale.yml
+stow/common/.config/nvim/.github/CONTRIBUTING.md
+stow/common/.config/nvim/.github/FUNDING.yml
+stow/common/.config/nvim/.github/README.md
