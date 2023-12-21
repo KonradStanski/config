@@ -38,6 +38,12 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 export CLICOLOR=1
 
+# set fzf default search
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
 # starship
 # Check if staship installed be seeing if "starship" runs, if not use backup prompt
 if command -v starship &> /dev/null
