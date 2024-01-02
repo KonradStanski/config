@@ -17,7 +17,6 @@ autoload -Uz compinit && compinit
 
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh
-source $HOME/.config/zsh/paths.zsh
 source $HOME/.config/zsh/platform.zsh
 
 # bind key for completion accept
@@ -43,6 +42,9 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
+
+# Paths
+export PATH="$HOME/bin:$PATH"
 
 # starship
 # Check if staship installed be seeing if "starship" runs, if not use backup prompt

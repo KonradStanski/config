@@ -5,9 +5,9 @@
 alias q='exit'
 alias re='reset'
 #alias ls='ls -GHp'
-alias ls="ls --color=auto"
-alias la='ls -a'
-alias ll='ls -l'
+#alias ls="ls --color=auto"
+alias ls="exa"
+alias ll='exa -lah --icons'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
