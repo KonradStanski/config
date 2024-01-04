@@ -24,8 +24,10 @@ bindkey '`' autosuggest-accept
 
 # zsh history settings
 HISTFILE=~/.zsh_history
-HISTSIZE=999999999
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
 SAVEHIST=$HISTSIZE
+
 
 # setting my default editor
 export EDITOR=nvim

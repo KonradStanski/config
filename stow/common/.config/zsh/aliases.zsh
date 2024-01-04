@@ -8,6 +8,7 @@ alias re='reset'
 #alias ls="ls --color=auto"
 alias ls="exa"
 alias ll='exa -lah --icons'
+alias la='exa -a'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
