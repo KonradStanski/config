@@ -13,3 +13,4 @@ ssh
 software-properties-common
 et
 gh
+fd
