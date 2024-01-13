@@ -17,12 +17,7 @@ end)
 
 -- Open new chrome window
 hs.hotkey.bind({ "cmd", "ctrl" }, "G", function()
-  hs.osascript.applescript([[
-    tell application "Google Chrome"
-      make new window
-      activate
-    end tell
-  ]])
+  hs.execute('open -na "Google Chrome" --args --profile-directory="Default"')
 end)
 
 -- Open new finder window
