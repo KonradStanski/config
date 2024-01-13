@@ -47,5 +47,8 @@ $(brew --prefix)/opt/fzf/install
 #                   CHANGE SETTINGS                 #
 #####################################################
 
+# disable Apple keypress hold popup
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Switch default shell to zsh
 chsh -s $(which zsh)
