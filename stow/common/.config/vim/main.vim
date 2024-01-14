@@ -10,18 +10,11 @@ endif
 
 "install plugins
 call plug#begin()
+Plug 'mhinz/vim-signify', { 'tag': 'legacy' }
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
-
-"if &term =~ "xterm\\|rxvt"
-"  " Vertical line in insert mode (non-blinking)
-"  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"  " Block in normal mode (non-blinking)
-"  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"endif
-
-"autocmd VimLeave * silent !echo -ne "\<Esc>]50;CursorShape=0\x7"
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -111,7 +104,7 @@ set noshiftround
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     KEYBINDINGS                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+imap jj <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
