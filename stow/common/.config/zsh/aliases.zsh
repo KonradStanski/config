@@ -21,9 +21,11 @@ alias gerp='grep'
 # Git aliases
 alias lg='lazygit'
 alias glog='git log --graph --oneline --decorate --all'
+alias gpull='git pull'
 
-# neovim
+# vim
 alias nv='nvim'
+alias vt='vim -p `fzf`'
 
 # Common Files to edit (use EDITOR variable)
 alias vimrc='$EDITOR ~/.config/vim/main.vim'

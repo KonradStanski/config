@@ -33,8 +33,8 @@ local function duplicateTab()
    end
 end
 
-local NextTabHK = hs.hotkey.new({ "shift" }, "Right", nextTab)
-local PreviousTabHK = hs.hotkey.new({ "shift" }, "Left", previousTab)
+local PreviousTabHK = hs.hotkey.new({ "alt" }, "J", previousTab)
+local NextTabHK = hs.hotkey.new({ "alt" }, "K", nextTab)
 local HistoryBackHK = hs.hotkey.new({ "cmd" }, "J", historyBack)
 local HistoryForwardHK = hs.hotkey.new({ "cmd" }, "K", historyForward)
 local DuplicateTabHK = hs.hotkey.new({ "cmd" }, "D", duplicateTab)
@@ -45,8 +45,8 @@ local GoogleChromeWF = hs.window.filter.new("Google Chrome")
 -- Subscribe to when your Google Chrome window is focused and unfocused
 GoogleChromeWF:subscribe(hs.window.filter.windowFocused, function()
    -- Enable hotkey in Google Chrome
-   NextTabHK:enable()
    PreviousTabHK:enable()
+   NextTabHK:enable()
    HistoryBackHK:enable()
    HistoryForwardHK:enable()
    DuplicateTabHK:enable()
@@ -54,8 +54,8 @@ end)
 
 GoogleChromeWF:subscribe(hs.window.filter.windowUnfocused, function()
    -- Disable hotkey when focusing out of Google Chrome
-   NextTabHK:disable()
    PreviousTabHK:disable()
+   NextTabHK:disable()
    HistoryBackHK:disable()
    HistoryForwardHK:disable()
    DuplicateTabHK:disable()
