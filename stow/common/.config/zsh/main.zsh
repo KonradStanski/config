@@ -30,7 +30,7 @@ SAVEHIST=$HISTSIZE
 
 
 # setting my default editor
-export EDITOR=nvim
+export EDITOR=vim
 
 # set default config folder (needed for macos sometimes)
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -48,7 +48,11 @@ gdone(){
 }
 
 tmun(){
-  echo "tmux session name?"
-  read name
-  tmux new -s $name
+    if [ -z "$1" ]; then
+       echo "tmux session name?"
+       read name
+       tmux new -s $name
+    else
+       tmux new -s $1
+    fi
 }
