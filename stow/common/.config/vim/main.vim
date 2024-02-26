@@ -34,6 +34,13 @@ if has('persistent_undo')
     set undofile
 endif
 
+# Fix cursor blinking and inert mode exit delay
+so ~/.vim/plugin/togglecursor.vim
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                    BASIC CONFIGURATION                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,6 +112,13 @@ set noshiftround
 "                     KEYBINDINGS                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap jj <Esc>
+
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
