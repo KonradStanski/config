@@ -34,7 +34,7 @@ if has('persistent_undo')
     set undofile
 endif
 
-# Fix cursor blinking and inert mode exit delay
+" Fix cursor blinking and inert mode exit delay
 so ~/.vim/plugin/togglecursor.vim
 augroup FastEscape
     autocmd!
