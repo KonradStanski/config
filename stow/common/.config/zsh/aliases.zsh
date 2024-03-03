@@ -13,6 +13,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
 alias find='fd'
+
 # typos
 alias sl='ls'
 alias cta='cat'
@@ -34,6 +35,11 @@ alias tmuxrc='$EDITOR ~/.config/tmux/main.tmux.conf'
 alias aliases='$EDITOR ~/.config/zsh/aliases.zsh'
 alias srctmux='tmux source-file ~/.tmux.conf'
 alias srczsh='source ~/.zshrc'
+
+# search
+rgs(){
+  rg -i -e "$*" .
+}
 
 #remove directory
 rmdir(){
