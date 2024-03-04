@@ -1,6 +1,7 @@
 #####################################################
 #              ZSH CONFIGURATION FILE               #
 #####################################################
+echo "Konrad's Zsh Config"
 # antigen
 source $HOME/.config/zsh/antigen.zsh
 antigen use oh-my-zsh
@@ -52,8 +53,10 @@ export PATH="$HOME/bin:$PATH"
 # Check if staship installed be seeing if "starship" runs, if not use backup prompt
 if command -v starship &> /dev/null
 then
+    echo "Using Starship Prompt"
     eval "$(starship init zsh)"
 else
+    echo "Using Zsh Prompt"
     source $HOME/.config/zsh/backup_prompt.zsh
 fi
 

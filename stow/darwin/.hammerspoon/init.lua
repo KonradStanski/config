@@ -1,7 +1,7 @@
 hs.console.clearConsole()
 hs.alert.show("Config loaded")
 
-
+-- relaod settings
 hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "R", function()
   hs.reload()
 end)
@@ -31,6 +31,21 @@ hs.hotkey.bind({ "cmd" }, "E", function()
     end tell
   ]])
 end)
+
+-- open obsidian
+hs.hotkey.bind({"ctrl", "cmd"}, "O", function()
+  -- Path to the Obsidian application
+  local obsidianPath = "/Applications/Obsidian.app"
+  local app = hs.application.get("Obsidian")
+  if app then
+    if not app:isFrontmost() then
+      app:activate(true)
+    end
+    else
+      hs.application.launchOrFocus(obsidianPath)
+  end
+end)
+
 
 require("chrome")
 

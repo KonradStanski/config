@@ -97,7 +97,7 @@ class CommandChooser():
 
         option_id = options[selected_index].split(self.option_split_char)[0]
         # connect to the session using the number
-        print(f"You Chose Option {option_id}")
+        print(f"You Chose Option {option_id}, running command: {self.choose_option_command}")
         subprocess.run(self.choose_option_command + [option_id])
 
 
