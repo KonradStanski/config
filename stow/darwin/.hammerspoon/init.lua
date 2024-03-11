@@ -32,21 +32,6 @@ hs.hotkey.bind({ "cmd" }, "E", function()
   ]])
 end)
 
--- open obsidian
-hs.hotkey.bind({"ctrl", "cmd"}, "O", function()
-  -- Path to the Obsidian application
-  local obsidianPath = "/Applications/Obsidian.app"
-  local app = hs.application.get("Obsidian")
-  if app then
-    if not app:isFrontmost() then
-      app:activate(true)
-    end
-    else
-      hs.application.launchOrFocus(obsidianPath)
-  end
-end)
-
-
 require("chrome")
 
 print("************CONFIG LOADED************")
