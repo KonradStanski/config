@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 import tty
@@ -8,18 +9,15 @@ class CommandChooser():
     # Constructor
     def __init__(self):
         # Command to get the list of options
-        self.get_options_command = [
-            'echo', 'Number Option\n1: Option1\n2: Option2\n3: Option3']
-        # Command to choose an option (ie. attach to a container)
-        self.choose_option_command = ['echo', 'You chose option']
+        self.get_options_command = 'echo "Number Option\n1: Option1\n2: Option2\n3: Option3"'
+        # formatted string option command
+        self.choose_option_command = "echo, you chose option {}"
         # Wether to ignore the first few lines (usually a header)
         self.ignore_first_n_lines = 1
         # Index of the option id in the option string (the id is used in the choose_command)
         self.option_id_index = 0
         # Splitting character for the option string
         self.option_split_char = ':'
-        # Shell true or false (used for commands with weird escape sequences that need to be a single string)
-        self.shell = False
         # Text to use as options instead of a command
         self.options_text = None
 
@@ -27,7 +25,7 @@ class CommandChooser():
     def get_options(self):
         if self.options_text:
             return self.options_text.split('\n')
-        options = subprocess.run(self.get_options_command, shell=self.shell,
+        options = subprocess.run(self.get_options_command, shell=True,
                                  capture_output=True).stdout.strip().decode('utf-8')
         options = options.split('\n')
         return options
@@ -94,11 +92,11 @@ class CommandChooser():
                 break
             elif ch == "q":
                 sys.exit(0)
-
-        option_id = options[selected_index].split(self.option_split_char)[0]
-        # connect to the session using the number
-        print(f"You Chose Option {option_id}, running command: {self.choose_option_command}")
-        subprocess.run(self.choose_option_command + [option_id])
+        # Execute Choose chosen option in command
+        option_id = options[selected_index].split(self.option_split_char)[self.option_id_index].strip()
+        command = self.choose_option_command.format(option_id)
+        print(f"You Chose Option {option_id}, running command: {command}")
+        subprocess.run(command, shell=True)
 
 
 # A NIFTY INTERPRETATION
