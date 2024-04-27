@@ -3,7 +3,7 @@ from TerminalChoice import CommandChooser
 
 if __name__ == "__main__":
     chooser = CommandChooser()
-    chooser.get_options_command = "exa ~/git -Dl --no-permissions --no-user --no-time"
+    chooser.get_options_command = "exa ~/git -l --no-permissions --no-user --no-time"
     chooser.choose_option_command = "lazygit -p ~/git/{}"
     chooser.ignore_first_n_lines = 0
     chooser.option_id_index = 1
