@@ -1,7 +1,7 @@
 hs.console.clearConsole()
 hs.alert.show("Config loaded")
 
--- relaod settings
+-- reload settings
 hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "R", function()
   hs.reload()
 end)
@@ -33,5 +33,6 @@ hs.hotkey.bind({ "cmd" }, "E", function()
 end)
 
 require("chrome")
+require("spotify")
 
 print("************CONFIG LOADED************")
