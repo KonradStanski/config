@@ -41,6 +41,15 @@ augroup FastEscape
     au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
 augroup END
+
+" Set status bar color on insert
+augroup StatusLine
+  autocmd!
+  autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=blue
+  autocmd InsertLeave * highlight StatusLine ctermfg=white ctermbg=darkgray
+augroup END
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                    BASIC CONFIGURATION                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
