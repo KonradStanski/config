@@ -21,7 +21,7 @@ class CommandChooser():
         self.options_text = None
 
     # Get the list of options
-    def get_options(self):
+    def get_options(self) -> list[str]:
         if self.options_text:
             return self.options_text.split('\n')
         # allow for a function to be passed to get the options
@@ -32,7 +32,7 @@ class CommandChooser():
         options = options.split('\n')
         return options
 
-    def print_options(self, options, selected_index):
+    def print_options(self, options: list[str], selected_index: int) -> None:
         _, width = subprocess.run(['stty', 'size'], capture_output=True).stdout.decode('utf-8').split()
         width = int(width)
         # truncate the options to the width of the terminal
@@ -44,7 +44,7 @@ class CommandChooser():
                 print(f"  {option}")
 
     # Read user input using getch()
-    def getch(self):
+    def getch(self) -> str:
         # Save the current terminal settings
         old_settings = termios.tcgetattr(sys.stdin)
         try:
@@ -99,66 +99,3 @@ class CommandChooser():
         command = self.choose_option_command.format(option_id)
         print(f"You Chose Option {option_id}, running command: {command}")
         subprocess.run(command, shell=True)
-
-
-# A NIFTY INTERPRETATION
-#!/usr/bin/env python3
-
-
-# import curses
-# import subprocess
-
-# def get_sessions():
-#     # query tmux for available sessions
-#     sessions = subprocess.run(['tmux', 'list-sessions'], capture_output=True).stdout.strip().decode('utf-8')
-#     # split the sessions string by newline to get a list of sessions
-#     sessions = sessions.split('\n')
-#     # return the list of sessions
-#     return sessions
-
-# def print_sessions(stdscr, sessions, selected_index):
-#     # move the cursor to the top left corner
-#     stdscr.move(0, 0)
-#     # print each session on its own line
-#     for i, session in enumerate(sessions):
-#         # if the current index is the selected index, mark it with a ">" and print it in bold
-#         if i == selected_index:
-#             stdscr.addstr(f'> {session}\n', curses.A_BOLD)
-#         else:
-#             stdscr.addstr(f'  {session}\n')
-#     # refresh the screen to show the printed text
-#     stdscr.refresh()
-
-# def main(stdscr):
-#     # get the available sessions
-#     sessions = get_sessions()
-#     # keep track of the selected session
-#     selected_index = 0
-#     # print the sessions in place
-#     while True:
-#         print_sessions(stdscr, sessions, selected_index)
-#         # get user input
-#         user_input = stdscr.getch()
-#         # if the user pressed the up arrow, decrement the selected index (unless it's already 0)
-#         if user_input == curses.KEY_UP:
-#             if selected_index > 0:
-#                 selected_index -= 1
-#         # if the user pressed the down arrow, increment the selected index (unless it's already the last index)
-#         elif user_input == curses.KEY_DOWN:
-#             if selected_index < len(sessions) - 1:
-#                 selected_index += 1
-#         # if the user pressed enter, connect to the selected session and break out of the loop
-#         elif user_input == curses.KEY_ENTER or user_input == 10:
-#             # get the selected session's number
-#             session_num = sessions[selected_index].split(':')[0]
-#             # connect to the session using the number
-#             subprocess.run(['tmux', 'attach-session', '-t', session_num])
-#             break
-#         # if the user pressed the esc key, break out of the loop
-#         elif user_input == 27:
-#             break
-
-
-# if __name__ == '__main__':
-#     # initialize curses
-#     curses.wrapper(main)
