@@ -1,4 +1,3 @@
-import os
 import subprocess
 import sys
 import tty
@@ -25,6 +24,9 @@ class CommandChooser():
     def get_options(self):
         if self.options_text:
             return self.options_text.split('\n')
+        # allow for a function to be passed to get the options
+        if callable(self.get_options_command):
+            return self.get_options_command()
         options = subprocess.run(self.get_options_command, shell=True,
                                  capture_output=True).stdout.strip().decode('utf-8')
         options = options.split('\n')

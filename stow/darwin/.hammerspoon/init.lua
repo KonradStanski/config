@@ -33,6 +33,5 @@ hs.hotkey.bind({ "cmd" }, "E", function()
 end)
 
 require("chrome")
-require("spotify")
 
 print("************CONFIG LOADED************")
