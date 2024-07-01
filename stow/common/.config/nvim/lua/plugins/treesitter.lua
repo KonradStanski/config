@@ -14,7 +14,9 @@ return {
 				ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "vimdoc", "vim" },
 
 				highlight = { enable = true },
-				indent = { enable = true, disable = { "python" } },
+				indent = {
+					enable = true, disable = { "python" }
+				},
 				incremental_selection = {
 					enable = true,
 					keymaps = {

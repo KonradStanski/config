@@ -1,17 +1,11 @@
-local opts = {
-	shiftwidth = 4,
-	tabstop = 4,
-	expandtab = true,
-	wrap = false,
-	termguicolors = true,
-	number = true,
-	relativenumber = true,
-}
-
--- Set options from table
-for opt, val in pairs(opts) do
-	vim.o[opt] = val
-end
+-- Vim Settings
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.wrap = false
+vim.o.termguicolors = true
+vim.o.number = true
+vim.o.relativenumber = false
 
 -- Set other options
 local colorscheme = require("helpers.colorscheme")
