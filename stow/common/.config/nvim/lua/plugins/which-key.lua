@@ -1,3 +1,4 @@
+-- This gives a popup menu which gives partial completions in neovim
 return {
 	{
 		"folke/which-key.nvim",

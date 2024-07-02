@@ -11,7 +11,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle agkozak/zsh-z
-antigen bundle jeffreytse/zsh-vi-mode
+#antigen bundle jeffreytse/zsh-vi-mode
 antigen apply
 
 # load fzf for zsh-vi-mode
