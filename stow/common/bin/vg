@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from TerminalChoice import CommandChooser
+
+if __name__ == "__main__":
+    chooser = CommandChooser()
+    chooser.get_options_command = "exa ~/git -1"
+    chooser.choose_option_command = "vim ~/git/{}"
+    chooser.ignore_first_n_lines = 0
+    chooser.option_id_index = 0
+    chooser.option_split_char = " "
+    chooser.shell = True
+    chooser.run()
+

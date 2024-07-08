@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+make -C ~/git/config/stow stow
