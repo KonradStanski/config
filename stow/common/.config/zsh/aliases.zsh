@@ -6,7 +6,7 @@ alias q='exit'
 alias re='reset'
 #alias ls='ls -GHp'
 #alias ls="ls --color=auto"
-if ! command -v exa &> /dev/null
+if command -v exa &> /dev/null
 then
   alias ls="exa"
   alias ll='exa -lah --icons'
