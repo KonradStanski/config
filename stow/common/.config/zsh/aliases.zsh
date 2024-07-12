@@ -12,6 +12,10 @@ then
   alias ll='exa -lah --icons'
   alias la='exa -a'
 fi
+if command -v ranger &> /dev/null
+then
+  alias e=". ranger"
+fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
