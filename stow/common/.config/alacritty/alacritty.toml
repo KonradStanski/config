@@ -2,6 +2,36 @@
 option_as_alt = "Both"
 decorations = "None"
 title = "lalala"
+opacity = 0.95
 
 [font]
 size = 12
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[colors.primary]
+foreground = "#c7c7c7"
+background = "#000000"
+
+[colors.normal]
+black = "#000000"
+red = "#b83019"
+green = "#51bf37"
+yellow = "#ffff55"
+blue = "#0c24bf"
+magenta = "#b93ec1"
+cyan = "#55ffff"
+white = "#c7c7c7"
+
+[colors.bright]
+black = "#545454"
+red = "#ff5555"
+green = "#55ff55"
+yellow = "#ffff55"
+blue = "#5555ff"
+magenta = "#ff55ff"
+cyan = "#55ffff"
+white = "#feffff"
+
