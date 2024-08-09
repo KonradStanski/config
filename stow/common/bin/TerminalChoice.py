@@ -38,6 +38,7 @@ class CommandChooser():
         # truncate the options to the width of the terminal
         options = [option[:width-2] for option in options]
         for i, option in enumerate(options):
+            option = option.strip()
             if i == selected_index:
                 print(f"\033[1m> {option}\033[0m")
             else:
