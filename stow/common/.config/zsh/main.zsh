@@ -11,14 +11,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle agkozak/zsh-z
-#antigen bundle jeffreytse/zsh-vi-mode
 antigen apply
-
-# load fzf for zsh-vi-mode
-zvm_after_init() {
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  source /usr/share/doc/fzf/examples/completion.zsh
-}
 
 # enables completion engine
 autoload -Uz compinit && compinit
@@ -55,6 +48,8 @@ fi
 
 # Paths
 export PATH="$HOME/bin:$PATH"
+# add ~/bin to python path
+export PYTHONPATH="$HOME/bin:$PYTHONPATH"
 
 # starship
 # Check if staship installed be seeing if "starship" runs, if not use backup prompt
