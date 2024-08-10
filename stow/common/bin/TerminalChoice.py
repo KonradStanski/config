@@ -96,7 +96,10 @@ class CommandChooser():
             elif ch == "q":
                 sys.exit(0)
         # Execute Choose chosen option in command
-        option_id = options[selected_index].split(self.option_split_char)[self.option_id_index].strip()
+        option_tokens = options[selected_index].split(self.option_split_char)
+        option_tokens = [string for string in option_tokens if string] # filter empty strings
+        option_id = option_tokens[self.option_id_index].strip()
+
         command = self.choose_option_command.format(option_id)
         print(f"You Chose Option {option_id}, running command: {command}")
         subprocess.run(command, shell=True)
