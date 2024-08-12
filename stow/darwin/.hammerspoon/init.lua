@@ -33,5 +33,6 @@ hs.hotkey.bind({ "cmd" }, "E", function()
 end)
 
 require("chrome")
+require("space")
 
 print("************CONFIG LOADED************")
