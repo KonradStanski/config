@@ -2,10 +2,10 @@
 from TerminalChoice import CommandChooser
 
 if __name__ == "__main__":
-    chooser = CommandChooser()
-    chooser.get_options_command = "grep '^Host' $HOME/.ssh/config | sed 's/Host //'"
-    chooser.choose_option_command = "ssh {}"
-    chooser.ignore_first_n_lines = 0
-    chooser.shell = True
+    chooser = CommandChooser(
+        get_options_command="grep '^Host' /etc/ssh/ssh_config.d/00-arista-bus-ssh.conf $HOME/.ssh/config | sed 's/.*Host //'",
+        execute_command='ssh {}',
+        ignore_first_n_lines=0,
+    )
     chooser.run()
 

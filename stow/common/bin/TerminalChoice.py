@@ -1,36 +1,35 @@
+from __future__ import annotations
 import subprocess
 import sys
 import tty
 import termios
 
-
+from typing import Callable
 class CommandChooser():
     # Constructor
-    def __init__(self):
+    def __init__(self,
+                 get_options_command: str | callable[[], list[str]] = 'echo "op1\nop2\nop3"',
+                 execute_command: str = 'echo "You chose option {}"',
+                 ignore_first_n_lines: int = 1,
+                 key_index: int = 0,
+                 split_char: str = ':',):
         # Command to get the list of options
-        self.get_options_command = 'echo "Number Option\n1: Option1\n2: Option2\n3: Option3"'
+        self.get_options_command = get_options_command
         # formatted string option command
-        self.choose_option_command = "echo, you chose option {}"
+        self.execute_command = execute_command
         # Wether to ignore the first few lines (usually a header)
-        self.ignore_first_n_lines = 1
-        # Index of the option id in the option string (the id is used in the choose_command)
-        self.option_id_index = 0
+        self.ignore_first_n_lines = ignore_first_n_lines
+        # Index of the argument to use in the execute command
+        self.key_index = key_index
         # Splitting character for the option string
-        self.option_split_char = ':'
-        # Text to use as options instead of a command
-        self.options_text = None
+        self.split_char = split_char
 
     # Get the list of options
     def get_options(self) -> list[str]:
-        if self.options_text:
-            return self.options_text.split('\n')
-        # allow for a function to be passed to get the options
         if callable(self.get_options_command):
             return self.get_options_command()
-        options = subprocess.run(self.get_options_command, shell=True,
-                                 capture_output=True).stdout.strip().decode('utf-8')
-        options = options.split('\n')
-        return options
+        else:
+            return subprocess.run(self.get_options_command, shell=True, capture_output=True).stdout.strip().decode('utf-8').split('\n')
 
     def print_options(self, options: list[str], selected_index: int) -> None:
         _, width = subprocess.run(['stty', 'size'], capture_output=True).stdout.decode('utf-8').split()
@@ -78,28 +77,21 @@ class CommandChooser():
             # Move the cursor back to the beginning of the line
             sys.stdout.write(f"\033[{len(options)}A")
             self.print_options(options, selected_index)
-
-            # Read a single character from the user
             ch = self.getch()
-
-            # Handle the arrow keys
-            if ch == "\x1b[A" or ch == "k":
-                # Up arrow
+            if ch == "\x1b[A" or ch == "k": # Up arrow \ k
                 selected_index = max(
                     self.ignore_first_n_lines, selected_index - 1)
-            elif ch == "\x1b[B" or ch == "j":
-                # Down arrow
+            elif ch == "\x1b[B" or ch == "j": # Down arrow \ j
                 selected_index = min(len(options) - 1, selected_index + 1)
-            elif ch == "\r":
-                # Enter key
+            elif ch == "\r": # Enter key
                 break
-            elif ch == "q":
+            elif ch == "q": # q or esc key
                 sys.exit(0)
         # Execute Choose chosen option in command
-        option_tokens = options[selected_index].split(self.option_split_char)
+        option_tokens = options[selected_index].split(self.split_char)
         option_tokens = [string for string in option_tokens if string] # filter empty strings
-        option_id = option_tokens[self.option_id_index].strip()
+        option_id = option_tokens[self.key_index].strip()
 
-        command = self.choose_option_command.format(option_id)
+        command = self.execute_command.format(option_id)
         print(f"You Chose Option {option_id}, running command: {command}")
         subprocess.run(command, shell=True)

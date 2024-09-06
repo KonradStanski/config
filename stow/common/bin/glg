@@ -8,12 +8,12 @@ def get_folders():
     return [folder for folder in files if os.path.isdir(os.path.join(git_dir, folder))]
 
 if __name__ == "__main__":
-    chooser = CommandChooser()
-    chooser.get_options_command = get_folders
-    chooser.choose_option_command = "lazygit -p ~/git/{}"
-    chooser.ignore_first_n_lines = 0
-    chooser.option_id_index = 0
-    chooser.option_split_char = " "
-    chooser.shell = True
+    chooser = CommandChooser(
+        get_options_command=get_folders,
+        execute_command="lazygit -p ~/git/{}",
+        ignore_first_n_lines=0,
+        key_index=0,
+        split_char=" ",
+    )
     chooser.run()
 
