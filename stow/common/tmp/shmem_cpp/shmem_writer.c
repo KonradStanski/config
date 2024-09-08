@@ -20,7 +20,7 @@ int main() {
 
     // Map shared memory
     Item *items = mmap(0, shm_size, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0);
-    if (items == MAP_FAILED) { perror("Failed to map shared memory"); exit(1); }
+    if (items == MAP_FAILED) {perror("Failed to map shared memory");exit(1);}
 
     // Initialize shared memory slots with empty data
     for (int i = 0; i < MAX_ITEMS; i++) {

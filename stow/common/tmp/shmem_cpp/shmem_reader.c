@@ -19,19 +19,31 @@ void print_hex(const void *data, size_t size) {
     }
 }
 
+void print_decimal(const void *data, size_t size) {
+    // break on size of struct and print decimal value of each byte
+    const unsigned char * bytes = (const unsigned char *)data;
+    for (size_t i = 0; i < size; i++) {
+        printf("%3d ", bytes[i]);
+        if ((i + 1) % sizeof(Item) == 0) {
+            printf("\n");
+        }
+    }
+}
+
 int main(int argc, char *argv[]) {
     // Check if the --hex flag is provided
     int hex_mode = 0;
+    int decimal_mode = 0;
     if (argc > 1 && strcmp(argv[1], "--hex") == 0) {
         hex_mode = 1;
+    }
+    if (argc > 1 && strcmp(argv[1], "--decimal") == 0) {
+        decimal_mode = 1;
     }
 
     // Open shared memory
     int shm_fd = shm_open(SHM_NAME, O_RDONLY, 0666);
-    if (shm_fd == -1) {
-        perror("Failed to open shared memory");
-        exit(1);
-    }
+    if (shm_fd == -1) {perror("Failed to open shared memory");exit(1);}
 
     // Allocate size for the shared memory (MAX_ITEMS * Item size)
     size_t shm_size = MAX_ITEMS * sizeof(Item);
@@ -47,6 +59,10 @@ int main(int argc, char *argv[]) {
         // Print entire shared memory region as hex
         printf("Shared memory content in hex:\n");
         print_hex(items, shm_size);
+    } else if (decimal_mode) {
+        // Print entire shared memory region as ASCII
+        printf("Shared memory content in ASCII:\n");
+        print_decimal(items, shm_size);
     } else {
         // Read items from shared memory
         printf("Items in shared memory:\n");
