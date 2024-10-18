@@ -14,6 +14,7 @@ if __name__ == "__main__":
         ignore_first_n_lines=0,
         key_index=0,
         split_char=" ",
+        multi_select=True,
     )
     chooser.run()
 
