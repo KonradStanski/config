@@ -114,9 +114,7 @@ class CommandChooser():
                 sys.exit(0)
         # Execute Choose chosen option in command
         if self.multi_select:
-            self.execute_chosen_command(selected_index, options)
-            if selected_index in selected_indices:
-                selected_indices.remove(selected_index)
+            selected_indices.add(selected_index)
             for index in selected_indices:
                 self.execute_chosen_command(index, options)
         else:
