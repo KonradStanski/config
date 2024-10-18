@@ -116,17 +116,24 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
+"""""""""""""""""""""
+" Command Bar Color "
+"""""""""""""""""""""
+augroup StatusLine
+  autocmd!
+  autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=blue
+  autocmd InsertLeave * highlight StatusLine ctermfg=white ctermbg=darkgray
+augroup END
+
+
+
 "Display 5 lines above/below the cursor when scrolling with a mouse.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                     KEYBINDINGS                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap jj <Esc>
 
-" For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-
-" For global replace
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+nnoremap gf <C-w>gF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
