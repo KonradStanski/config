@@ -6,7 +6,8 @@ if __name__ == "__main__":
         get_options_command="docker ps",
         execute_command='docker stop {}',
         ignore_first_n_lines=1,
-        split_char=" "
+        split_char=" ",
+        multi_select=True
     )
     chooser.run()
 
