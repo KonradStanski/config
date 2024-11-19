@@ -132,8 +132,8 @@ augroup END
 "                     KEYBINDINGS                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap jj <Esc>
-
 nnoremap gf <C-w>gF
+vnoremap <silent> jt :!python3 /Users/konrad/bin/relaxed_json.py<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
