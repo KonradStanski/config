@@ -11,3 +11,4 @@ stow/common/.config/nvim/.github/workflows/stale.yml
 stow/common/.config/nvim/.github/CONTRIBUTING.md
 stow/common/.config/nvim/.github/FUNDING.yml
 stow/common/.config/nvim/.github/README.md
+*.swp

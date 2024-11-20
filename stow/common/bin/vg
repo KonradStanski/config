@@ -3,9 +3,9 @@ from TerminalChoice import CommandChooser
 
 if __name__ == "__main__":
     chooser = CommandChooser(
-        get_options_command="exa ~/git -1",
+        get_options_command="ls ~/git -1",
         execute_command="vim ~/git/{}",
-        ignore_first_n_lines=0,
+        ignore_first_n_lines=1,
         key_index=0,
         split_char=" ",
     )
