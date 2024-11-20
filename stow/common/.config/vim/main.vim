@@ -122,12 +122,9 @@ set noshiftround
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap jj <Esc>
 
-" For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-
-" For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
+nnoremap gf <C-w>gF
+nnoremap <C-E> <C-^>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
