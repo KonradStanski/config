@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+# command_desc
+# {
+#     "name": "sshscan",
+#     "description": "Scan network for SSH hosts and add them to ~/.ssh/config"
+# }
+
 import re
 import os
 import subprocess

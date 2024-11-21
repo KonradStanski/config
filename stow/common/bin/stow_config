@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
+# command_desc
+# {
+#     "name": "stow_config",
+#     "description": "Stow config files"
+# }
+
 make -C ~/git/config/stow stow

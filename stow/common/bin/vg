@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# command_desc
+# {
+#     "name": "vg",
+#     "description": "open ~/git/* in vim"
+# }
+
 from TerminalChoice import CommandChooser
 
 if __name__ == "__main__":

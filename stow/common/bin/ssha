@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# command_desc
+# {
+#     "name": "ssha",
+#     "description": "Ssh to a host"
+# }
+
 from TerminalChoice import CommandChooser
 
 if __name__ == "__main__":

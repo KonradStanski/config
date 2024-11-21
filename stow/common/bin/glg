@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# command_desc
+# {
+#     "name": "glg",
+#     "description": "Quickly open ~/git in lazygit"
+# }
+
+
 from TerminalChoice import CommandChooser
 import os
 
@@ -7,7 +14,7 @@ def get_folders():
     files = os.listdir(git_dir)
     return [folder for folder in files if os.path.isdir(os.path.join(git_dir, folder))]
 
-if __name__ == "__main__":
+def main():
     chooser = CommandChooser(
         get_options_command=get_folders,
         execute_command="lazygit -p ~/git/{}",
@@ -18,3 +25,5 @@ if __name__ == "__main__":
     )
     chooser.run()
 
+if __name__ == "__main__":
+    main()

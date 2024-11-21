@@ -1,4 +1,10 @@
 #!/bin/bash
+# command_desc
+# {
+#     "name": "tmun",
+#     "description": "Create or attach to a tmux session",
+#     "usage": "tmun [session_name]"
+# }
 
 # Function to prompt for a session name if not provided
 get_session_name() {

@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+# command_desc
+# {
+#     "name": "vsshscan",
+#     "description": "Scan local network for SSH hosts and add them to ~/.ssh/vscode-ssh-config"
+# }
 import re
 import os
 import subprocess

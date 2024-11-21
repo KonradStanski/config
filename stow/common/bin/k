@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+# command_desc
+# {
+#     "name": "k",
+#     "description": "Choose ~/bin command",
+#     "usage": "k"
+# }
+import os
+import json
+from TerminalChoice import CommandChooser
+from FormatTable import format_table
+
+
+def extract_json_from_file(file_path):
+    """
+    Extracts JSON from comments following the `# command_desc` line in a file.
+
+    :param file_path: Path to the file to parse.
+    :return: Parsed JSON as a dictionary, or None if no JSON is found.
+    """
+    with open(file_path, "r") as file:
+
+        json_lines = []
+        start_reading = False
+
+        for line in file:
+            stripped_line = line.strip()
+
+            # Skip shebang line
+            if stripped_line.startswith("#!") and not start_reading:
+                continue
+
+            # Start processing after detecting the marker
+            if stripped_line == "# command_desc":
+                start_reading = True
+                continue
+
+            # Stop if a non-comment line is encountered after the marker
+            if not stripped_line.startswith("#") and start_reading:
+                break
+
+            # Collect lines only after the marker
+            if start_reading:
+                json_lines.append(stripped_line.lstrip("#").strip())
+
+        # Combine lines and parse JSON
+        if json_lines:
+            try:
+                json_data = json.loads(" ".join(json_lines))
+                return json_data
+            except json.JSONDecodeError:
+                print(f"No valid JSON found in comments of {file_path}")
+                return None
+    return None
+
+
+def scan_directory(dir):
+    """Scans /bin and extracts metadata from Python files."""
+    command_metadata = []
+    for root, _, files in os.walk(dir):
+        for file in files:
+            try:
+                # check that file is readable
+                with open(os.path.join(root, file)) as f:
+                    f.readline()
+            except:
+                continue
+            filepath = os.path.join(root, file)
+            command_dict = extract_json_from_file(filepath)
+            if command_dict:
+                command_metadata.append(command_dict)
+    return command_metadata
+
+
+def get_command_desc():
+    bin_dir = os.path.expanduser("~/bin")
+    metadata = scan_directory(bin_dir)
+    table_strings = format_table(metadata)
+    # alphabetically sort lines except for first one
+    table_strings = table_strings[:1] + sorted(table_strings[1:])
+    return table_strings
+
+def main():
+    chooser = CommandChooser(
+        get_options_command=get_command_desc,
+        execute_command="echo {}",
+        ignore_first_n_lines=1,
+        key_index=0,
+        split_char=" ",
+        multi_select=True,
+    )
+    chooser.run()
+
+if __name__ == "__main__":
+    main()
