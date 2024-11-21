@@ -100,6 +100,12 @@ class CommandChooser():
                     self.ignore_first_n_lines, selected_index - 1)
             elif ch == "\x1b[B" or ch == "j": # Down arrow \ j
                 selected_index = min(len(options) - 1, selected_index + 1)
+            # catch u/d keys to skip 5 options
+            elif ch == "u":
+                selected_index = max(
+                    self.ignore_first_n_lines, selected_index - 5)
+            elif ch == "d":
+                selected_index = min(len(options) - 1, selected_index + 5)
             elif ch == " ": # Space key
                 if self.multi_select:
                     if selected_index in selected_indices:
