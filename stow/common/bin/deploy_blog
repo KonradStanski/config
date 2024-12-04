@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <commit_message>"
+    exit 1
+fi
+
+# Save the current directory
+ORIGINAL_DIR=$(pwd)
+
+# Define variables
+BLOG_DIR=~/git/KonradStaniszewski.github.io
+COMMIT_MESSAGE="$1"
+
+
+# Run the copy_blog_md command
+if ! command -v copy_blog_md &> /dev/null; then
+    echo "Command 'copy_blog_md' not found!"
+    cd "$ORIGINAL_DIR" # Return to the original directory
+    exit 1
+fi
+
+echo "Running the copy_blog_md command..."
+copy_blog_md # Run the command and show its output
+
+echo "Blog copied successfully!"
+echo "Pushing changes to the blog repository..."
+# Navigate to the blog directory
+cd "$BLOG_DIR" || { echo "Directory $BLOG_DIR not found!"; exit 1; }
+echo "current directory: $(pwd)"
+
+# Git operations
+echo "Adding, committing, and pushing changes..."
+git add blog/
+git commit -m "$COMMIT_MESSAGE"
+git push
+
+# Return to the original directory
+cd "$ORIGINAL_DIR"
+
+echo "Blog updated and changes pushed successfully! Returned to the original directory."
+echo "See deployment status here: https://vercel.com/konradstanskis-projects/konrad-staniszewski-github-io/deployments"
+echo "See the updated blog here: https://konradstaniszewski.com/blog"
+
+
