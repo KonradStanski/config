@@ -6,11 +6,11 @@ alias q='exit'
 alias re='reset'
 #alias ls='ls -GHp'
 #alias ls="ls --color=auto"
-if command -v exa &> /dev/null
+if command -v eza &> /dev/null
 then
-  alias ls="exa"
-  alias ll='exa -lah --icons'
-  alias la='exa -a'
+  alias ls="eza"
+  alias ll='eza -lah --icons'
+  alias la='eza -a'
 fi
 if command -v ranger &> /dev/null
 then
