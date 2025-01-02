@@ -1,0 +1,5 @@
+#!/bin/bash
+git -C ~/git/obsidian reset
+git -C ~/git/obsidian add arista
+git -C ~/git/obsidian commit -m "Add Work"
+git -C ~/git/obsidian push

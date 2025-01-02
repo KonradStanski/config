@@ -1,0 +1,5 @@
+#!/bin/bash
+git -C ~/git/obsidian reset
+git -C ~/git/obsidian add personal
+git -C ~/git/obsidian commit -m "Add Personal"
+git -C ~/git/obsidian push
