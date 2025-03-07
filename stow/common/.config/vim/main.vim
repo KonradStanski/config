@@ -56,6 +56,7 @@ augroup END
 "Set compatibility to Vim only.
 set nocompatible
 
+set cursorline
 "Encoding
 set encoding=utf-8
 
