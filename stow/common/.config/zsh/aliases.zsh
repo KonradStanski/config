@@ -60,3 +60,22 @@ gdone(){
     git push
 }
 
+pudb() {
+    if [ "$1" = "True" ]; then
+        export PYTHONBREAKPOINT="pudb.set_trace"
+    else
+        unset PYTHONBREAKPOINT
+    fi
+    echo "PYTHONBREAKPOINT Value is:"
+    echo $PYTHONBREAKPOINT
+}
+
+tformat() {
+   if [ "$1" = "True" ]; then
+      export TRACEFORMAT=tid,time,facility-name,trace-level,function-name
+   else
+      unset TRACEFORMAT
+   fi
+   echo "TRACEFORMAT Value is:"
+   echo $TRACEFORMAT
+}
