@@ -137,6 +137,8 @@ vnoremap <silent> jt :!python3 /Users/konrad/bin/relaxed_json.py<CR>
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 nnoremap gf <C-w>gF
 nnoremap <C-E> <C-^>
+map , @@
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          MATCHING                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

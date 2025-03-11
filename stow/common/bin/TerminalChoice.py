@@ -8,7 +8,7 @@ class CommandChooser():
     # Constructor
     def __init__(self,
                  get_options_command: str | callable[[], list[str]] = 'echo "op1\nop2\nop3"',
-                 execute_command: str = 'echo "You chose option {}"',
+                 execute_command: str | callable = 'echo "You chose option {}"',
                  ignore_first_n_lines: int = 1,
                  key_index: int = 0,
                  split_char: str = ':',
@@ -76,9 +76,13 @@ class CommandChooser():
         option_tokens = options[index].split(self.split_char)
         option_tokens = [string for string in option_tokens if string]
         option_id = option_tokens[self.key_index].strip()
-        command = self.execute_command.format(option_id)
-        print(f"You Chose Option {option_id}, running command: {command}")
-        subprocess.run(command, shell=True)
+        if callable(self.execute_command):
+            print(f"You Chose Option {option_id}")
+            self.execute_command(option_id)
+        else:
+            command = self.execute_command.format(option_id)
+            print(f"You Chose Option {option_id}, running command: {command}")
+            subprocess.run(command, shell=True)
 
     def run(self):
         options = self.get_options()

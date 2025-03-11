@@ -79,3 +79,18 @@ tformat() {
    echo "TRACEFORMAT Value is:"
    echo $TRACEFORMAT
 }
+
+# method to change file extensions
+chext() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: chext <oldext> <newext>"
+    return 1
+  fi
+  local oldext="$1"
+  local newext="$2"
+  for f in *."$oldext"; do
+    [[ -e "$f" ]] || continue  # Skip if no files match
+    mv -- "$f" "${f%.$oldext}.$newext"
+  done
+}
+
