@@ -10,7 +10,7 @@ from TerminalChoice import CommandChooser
 if __name__ == "__main__":
     chooser = CommandChooser(
         get_options_command="docker ps",
-        execute_command='docker exec -it {} bash',
+        execute_command='docker exec -it {} sh',
         ignore_first_n_lines=1,
         split_char=" "
     )
