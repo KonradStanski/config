@@ -19,7 +19,7 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
-alias find='fd'
+#alias find='fd'
 
 # typos
 alias sl='ls'
@@ -94,3 +94,10 @@ chext() {
   done
 }
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
