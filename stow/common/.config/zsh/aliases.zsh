@@ -19,7 +19,6 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dirsize='du -sh -- * .[^.]* ..?* 2> /dev/null'
-#alias find='fd'
 
 # typos
 alias sl='ls'

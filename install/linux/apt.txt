@@ -13,7 +13,6 @@ ssh
 software-properties-common
 et
 gh
-fd
 git-delta
 exa
 yazi
