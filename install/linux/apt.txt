@@ -16,3 +16,4 @@ gh
 fd
 git-delta
 exa
+yazi
