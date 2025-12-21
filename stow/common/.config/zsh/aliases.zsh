@@ -2,6 +2,7 @@
 #                      ALIASES                      #
 #####################################################
 # Common aliases
+alias c="code ."
 alias q='exit'
 alias re='reset'
 #alias ls='ls -GHp'
