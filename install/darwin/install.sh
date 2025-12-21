@@ -50,5 +50,8 @@ $(brew --prefix)/opt/fzf/install
 # disable Apple keypress hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# install yazi theme
+ya pkg add yazi-rs/flavors:dracula
+
 # Switch default shell to zsh
 chsh -s $(which zsh)

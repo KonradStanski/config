@@ -34,6 +34,6 @@ end)
 
 require("chrome")
 require("space")
-require("space_names")
+-- require("space_names")
 
 print("************CONFIG LOADED************")
