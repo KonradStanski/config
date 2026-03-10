@@ -36,8 +36,8 @@ Key.on("o", ["ctrl", "cmd"], () => {
 Key.on("c", ["ctrl", "cmd"], () => {
   toggleFocus("Google Chat");
 });
-Key.on("k", ["ctrl", "cmd"], () => {
-  toggleFocus("kitty");
+Key.on("s", ["ctrl", "cmd"], () => {
+  toggleFocus("spotify");
 });
 Key.on("1", ["shift", "cmd"], () => {
   moveFocusedWindowToSpace(1);

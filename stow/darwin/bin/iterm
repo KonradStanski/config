@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# command_desc
+# {
+#     "name": "iterm",
+#     "description": "Open new iTerm window with optional path/command",
+#     "usage": "iterm [PATH] [CMD]"
+# }
+
 #
 # Open new iTerm window from the command line using v3 syntax for applescript as needed in iTerm2 Version 3+
 # This script blocks until the cmd is executed in the new iTerm2 window.  It then leaves the window open. 

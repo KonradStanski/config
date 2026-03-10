@@ -39,7 +39,7 @@ function moveFocusedWindowToSpace(spaceNumber)
 end
 
 -- Bind keys cmd + shift + 1-6
-for i = 1, 6 do
+for i = 1, 8 do
     hs.hotkey.bind({"cmd", "shift"}, tostring(i), function()
         log.i("Hotkey pressed: cmd + shift + " .. i)
         moveFocusedWindowToSpace(i)
