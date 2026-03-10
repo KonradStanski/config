@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# command_desc
+# {
+#     "name": "eta",
+#     "description": "eternal terminal to a host"
+# }
+
+from TerminalChoice import CommandChooser
+
+if __name__ == "__main__":
+    chooser = CommandChooser(
+        get_options_command="grep '^Host' $HOME/.ssh/config | sed 's/.*Host //'",
+        execute_command='et {}',
+        ignore_first_n_lines=0,
+    )
+    chooser.run()
