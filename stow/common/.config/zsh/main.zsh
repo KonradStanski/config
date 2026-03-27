@@ -13,9 +13,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle agkozak/zsh-z
 antigen apply
 
-# enables completion engine
-autoload -Uz compinit && compinit
-
 # Sourcing
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/platform.zsh
