@@ -1,0 +1,5 @@
+# Toggle an app on the current Space: hide it if focused, otherwise open, move, and focus it.
+
+ctrl + cmd - o : /Users/konrad/.local/bin/dockmove toggle-app --bundle-id md.obsidian
+
+ctrl + cmd - c : /Users/konrad/.local/bin/dockmove toggle-app --bundle-id com.google.Chrome.app.pommaclcbfghclhalboakcipcmmndhcj

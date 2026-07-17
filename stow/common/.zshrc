@@ -15,8 +15,6 @@ npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.s
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-source ~/.azshrc
-
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -39,3 +37,4 @@ wtrm() {
     local wtname=$1
     git worktree remove ~/wt/$repo/$wtname
 }
+export PATH="$HOME/.local/bin:$PATH"
